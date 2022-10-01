@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/replenishment_search"
+    app:startDestination="@id/replenishment_searching">
+
+    <fragment
+        android:id="@+id/replenishment_searching"
+        android:name="com.example.mamasan.replenishment_manage.replenishment_searching"
+        android:label="fragment_replenishment_searching"
+        tools:layout="@layout/fragment_replenishment_searching" >
+        <action
+            android:id="@+id/action_replenishment_searching_to_replenishment_detail"
+            app:destination="@id/replenishment_detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/replenishment_detail"
+        android:name="com.example.mamasan.replenishment_manage.replenishment_detail"
+        android:label="fragment_replenishment_detail"
+        tools:layout="@layout/fragment_replenishment_detail" >
+        <action
+            android:id="@+id/action_replenishment_detail_to_replenishment_searching"
+            app:destination="@id/replenishment_searching" />
+    </fragment>
+</navigation>

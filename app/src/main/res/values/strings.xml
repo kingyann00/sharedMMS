@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Mamasan_FoodBank</string>
+    <string name="title_activity_replenishment_list">replenishment_list</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_onGoing">Ongoing</string>
+    <string name="tab_text_booking">Booking</string>
+    <string name="tab_text_completed">Completed</string>
+    <string name="tab_text_canceled">Canceled</string>
+    <string name="userName">Hon King Yann</string>
+    <string name="campaign_title">Replenishment Title</string>
+    <string name="campaign_food_title">Food Title</string>
+    <string name="DateTime">Sat, Sep 24, 11:06 AM</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="progress_quantity">20</string>
+    <string name="unit_label">units</string>
+    <string name="food_measurement">20</string>
+    <string name="food_quantity">5</string>
+    <string name="quantity_label">Quantity</string>
+    <string name="sku_label">SKU</string>
+    <string name="campaign_sku">kg</string>
+    <string name="campaign_food_type">frozen food</string>
+    <string name="approve">Approve</string>
+    <string name="reject">Reject</string>
+    <string name="title_activity_replenishment_reservation_list">replenishment_reservation_list
+    </string>
+    <string name="title_activity_replenishment_reservation">replenishment_reservation</string>
+</resources>

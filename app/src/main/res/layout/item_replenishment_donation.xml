@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hon King Yann"
+        android:textColor="@color/color_2"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/tiny_spacing"
+        android:layout_marginBottom="@dimen/tiny_spacing"
+     />
+    <TextView
+        android:id="@+id/dateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/DateTime"
+        android:textSize="@dimen/tiny_description"
+        android:textColor="@color/color_description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userName"
+
+        android:layout_marginBottom="@dimen/tiny_spacing"
+        />
+
+
+    <TextView
+        android:id="@+id/donate_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/tiny_spacing"
+        android:text="5"
+        android:textSize="@dimen/tiny_description"
+        android:textColor="@color/color_2"
+        app:layout_constraintBottom_toBottomOf="@+id/unit_label"
+        app:layout_constraintEnd_toStartOf="@+id/unit_label"
+        app:layout_constraintTop_toTopOf="@+id/unit_label" />
+
+    <TextView
+        android:id="@+id/unit_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="units"
+        android:textColor="@color/color_2"
+        android:textSize="@dimen/tiny_description"
+        app:layout_constraintBottom_toBottomOf="@+id/dateTime"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dateTime" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2sp"
+        android:layout_marginTop="@dimen/tiny_spacing"
+        android:background="@color/color_sperator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dateTime"
+     />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
