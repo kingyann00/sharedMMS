@@ -44,6 +44,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intentrrl)
         }
 
+        val btnUserModule = findViewById<Button>(R.id.btnUserModule)
+        btnUserModule.setOnClickListener {
+            startActivity(Intent(this, MamasanMain::class.java))
+            finish()
+        }
+
 
 
     }

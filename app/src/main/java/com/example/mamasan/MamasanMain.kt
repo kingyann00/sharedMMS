@@ -29,11 +29,6 @@ class MamasanMain : AppCompatActivity() {
             finish()
         }
 
-        //testing purpose
-        val btnTest = binding.button4
-        btnTest.setOnClickListener {
-            startActivity(Intent(this, ProfileActivity::class.java))
-            finish()
-        }
+
     }
 }
