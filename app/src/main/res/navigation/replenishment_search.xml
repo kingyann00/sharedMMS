@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/replenishment_search"
     app:startDestination="@id/replenishment_searching">
-
     <fragment
         android:id="@+id/replenishment_searching"
         android:name="com.example.mamasan.replenishment_manage.replenishment_searching"
@@ -20,7 +19,33 @@
         android:label="fragment_replenishment_detail"
         tools:layout="@layout/fragment_replenishment_detail" >
         <action
+            android:id="@+id/action_replenishment_detail_to_replenishment_food_detail"
+            app:destination="@id/replenishment_food_detail" />
+        <action
             android:id="@+id/action_replenishment_detail_to_replenishment_searching"
             app:destination="@id/replenishment_searching" />
+        <action
+            android:id="@+id/action_replenishment_detail_to_placeholderFragment"
+            app:destination="@id/placeholderFragment" />
+
     </fragment>
+    <fragment
+        android:id="@+id/replenishment_food_detail"
+        android:name="com.example.mamasan.replenishment_manage.replenishment_food_detail"
+        android:label="fragment_replenishment_food_detail"
+        tools:layout="@layout/fragment_replenishment_food_detail" >
+        <action
+            android:id="@+id/action_replenishment_food_detail_to_replenishment_detail"
+            app:destination="@id/replenishment_detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/placeholderFragment"
+        android:name="com.example.mamasan.replenishment_manage.ui.main.PlaceholderFragment"
+        android:label="fragment_replenishment_list"
+        tools:layout="@layout/fragment_replenishment_list" >
+        <action
+            android:id="@+id/action_placeholderFragment_to_replenishment_detail"
+            app:destination="@id/replenishment_detail" />
+    </fragment>
+
 </navigation>

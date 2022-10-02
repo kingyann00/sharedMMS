@@ -6,52 +6,20 @@
     android:layout_height="wrap_content"
     tools:context=".replenishment_manage.replenishment_food_detail">
 
-    <!-- TODO: Update blank fragment layout -->
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:id="@+id/action_bar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        android:backgroundTint="@color/color_2">-->
 
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent">-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/ic_baseline_arrow_back_24"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:tint="@color/white"-->
-<!--                android:layout_marginStart="@dimen/activity_vertical_margin"/>-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/FoodTittle"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Foood NAME"-->
-<!--                android:fontFamily="@font/roboto_black"-->
-<!--                android:textSize="@dimen/title_h3"-->
-<!--                android:textColor="@color/white"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-<!--    </androidx.cardview.widget.CardView>-->
+    <include
+        android:id="@+id/header"
+        layout="@layout/admin_header_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
         app:cardCornerRadius="8dp"
@@ -59,7 +27,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/header">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -69,7 +37,7 @@
             android:paddingBottom="@dimen/tiny_spacing">
 
             <TextView
-                android:id="@+id/replenishmentTitle"
+                android:id="@+id/foodName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/basic_margin"
@@ -87,9 +55,9 @@
                 android:layout_marginStart="@dimen/tiny_spacing"
                 android:text="@string/campaign_food_type"
                 android:textSize="@dimen/tiny_description"
-                app:layout_constraintBottom_toBottomOf="@+id/replenishmentTitle"
-                app:layout_constraintStart_toEndOf="@+id/replenishmentTitle"
-                app:layout_constraintTop_toTopOf="@+id/replenishmentTitle" />
+                app:layout_constraintBottom_toBottomOf="@+id/foodName"
+                app:layout_constraintStart_toEndOf="@+id/foodName"
+                app:layout_constraintTop_toTopOf="@+id/foodName" />
 
 
             <View
@@ -100,18 +68,68 @@
                 android:background="@color/color_sperator"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/replenishmentTitle" />
+                app:layout_constraintTop_toBottomOf="@id/foodName" />
 
+            <TextView
+                android:id="@+id/stok_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny_spacing"
+                android:text="In stok"
+                android:textColor="@color/color_1"
+
+                android:textSize="@dimen/supertiny_description"
+                app:layout_constraintStart_toStartOf="@+id/progressBar"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <TextView
+                android:id="@+id/arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/tiny_spacing"
+                android:text="--->"
+                android:textSize="@dimen/supertiny_description"
+
+                app:layout_constraintBottom_toBottomOf="@+id/stok_label"
+                app:layout_constraintStart_toEndOf="@+id/stok_label"
+                app:layout_constraintTop_toTopOf="@+id/stok_label" />
+
+            <TextView
+                android:id="@+id/stok_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/tiny_spacing"
+                android:text="@string/food_quantity"
+                android:textColor="@color/color_1"
+                android:textSize="@dimen/supertiny_description"
+
+                app:layout_constraintBottom_toBottomOf="@+id/pointer_userName"
+                app:layout_constraintStart_toEndOf="@+id/arrow"
+                app:layout_constraintTop_toTopOf="@+id/pointer_userName" />
+
+            <TextView
+                android:id="@+id/stok_unit_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="5dp"
+                android:text="@string/unit_label"
+                android:textColor="@color/color_1"
+                android:textSize="@dimen/supertiny_description"
+
+                app:layout_constraintBottom_toBottomOf="@+id/stok_label"
+                app:layout_constraintStart_toEndOf="@+id/stok_quantity"
+                app:layout_constraintTop_toTopOf="@+id/pointer_userName" />
 
             <TextView
                 android:id="@+id/pointer_userName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/tiny_spacing"
-                android:text="20"
-                android:textColor="@color/color_1"
-
+                android:text="N/A"
+                android:textColor="@color/color_2"
                 android:textSize="@dimen/supertiny_description"
+                android:visibility="invisible"
                 app:layout_constraintStart_toStartOf="@+id/progressBar"
                 app:layout_constraintTop_toBottomOf="@+id/view" />
 
@@ -122,7 +140,7 @@
                 android:layout_marginStart="@dimen/tiny_spacing"
                 android:text="--->"
                 android:textSize="@dimen/supertiny_description"
-
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@+id/pointer_userName"
                 app:layout_constraintStart_toEndOf="@+id/pointer_userName"
                 app:layout_constraintTop_toTopOf="@+id/pointer_userName" />
@@ -135,6 +153,7 @@
                 android:text="@string/food_quantity"
                 android:textColor="@color/color_2"
                 android:textSize="@dimen/supertiny_description"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@+id/pointer_userName"
                 app:layout_constraintStart_toEndOf="@+id/plus"
                 app:layout_constraintTop_toTopOf="@+id/pointer_userName" />
@@ -148,6 +167,7 @@
                 android:text="@string/unit_label"
                 android:textColor="@color/color_2"
                 android:textSize="@dimen/supertiny_description"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@+id/pointer_userName"
                 app:layout_constraintStart_toEndOf="@+id/donate_quantity"
                 app:layout_constraintTop_toTopOf="@+id/pointer_userName" />
@@ -160,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/basic_margin"
                 android:layout_marginEnd="@dimen/tiny_spacing"
-                android:progressTint="@color/color_reject"
+                android:progressTint="@color/color_approve"
                 app:layout_constraintBottom_toBottomOf="@+id/demand_quantity"
                 app:layout_constraintEnd_toStartOf="@+id/demand_quantity"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -174,7 +194,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/basic_margin"
                 android:layout_marginEnd="@dimen/tiny_spacing"
-                android:progressTint="@color/color_reject"
+                android:progressTint="@color/color_2"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@+id/demand_quantity"
                 app:layout_constraintEnd_toStartOf="@+id/demand_quantity"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -187,8 +208,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/tiny_spacing"
                 android:text="30"
+                android:textColor="@color/black"
                 android:textSize="@dimen/tiny_description"
-                android:textColor="@color/color_1"
                 app:layout_constraintBottom_toBottomOf="@+id/progressBar"
                 app:layout_constraintEnd_toStartOf="@+id/progress_unit_label"
 
@@ -200,8 +221,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/unit_label"
+                android:textColor="@color/black"
                 android:textSize="@dimen/tiny_description"
-                android:textColor="@color/color_1"
                 app:layout_constraintBottom_toBottomOf="@+id/demand_quantity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/demand_quantity" />
@@ -262,8 +283,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/unit_label"
-                android:textSize="@dimen/tiny_description"
                 android:textColor="@color/color_reject"
+                android:textSize="@dimen/tiny_description"
                 app:layout_constraintBottom_toBottomOf="@+id/less_quantity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/less_quantity" />
@@ -273,14 +294,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/basic_margin"
+                android:layout_marginEnd="@dimen/tiny_spacing"
                 android:layout_marginBottom="@dimen/tiny_spacing"
                 android:text="Less:"
-android:textSize="@dimen/tiny_description"
                 android:textColor="@color/color_reject"
-                app:layout_constraintEnd_toStartOf="@+id/less_quantity"
+                android:textSize="@dimen/tiny_description"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view2"
-                android:layout_marginEnd="@dimen/tiny_spacing"/>
+                app:layout_constraintEnd_toStartOf="@+id/less_quantity"
+                app:layout_constraintTop_toBottomOf="@+id/view2" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

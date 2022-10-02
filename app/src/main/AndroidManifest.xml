@@ -23,6 +23,11 @@
             android:name=".replenishment_manage.navigation_replenishment_search"
             android:exported="false" />
         <activity
+            android:name=".replenishment_manage.replenishment"
+            android:exported="false"
+            android:label="@string/title_activity_replenishment_list"
+            android:theme="@style/Theme.Mamasan.NoActionBar" />
+        <activity
             android:name=".replenishment_manage.replenishment_list"
             android:exported="false"
             android:label="@string/title_activity_replenishment_list"

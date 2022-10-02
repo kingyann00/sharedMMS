@@ -5,4 +5,5 @@ interface OnDetailClicklistener {
 
 
     fun onClicked(position: Int)
+
 }

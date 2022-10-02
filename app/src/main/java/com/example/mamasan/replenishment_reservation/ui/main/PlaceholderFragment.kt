@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.AuthFailureError
@@ -17,6 +18,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.mamasan.R
 import com.example.mamasan.databinding.FragmentReplenishmentReservationListBinding
 import com.example.mamasan.replenishment_reservation.DataReplenishmentReservation
 import com.example.mamasan.replenishment_reservation.OnDetailClicklistener
@@ -155,6 +157,10 @@ class PlaceholderFragment : Fragment(), OnDetailClicklistener {
 
 
     override fun onClicked(position: Int) {
+
+        val bundle = Bundle()
+        bundle.putInt("id",1)
+        findNavController().navigate(R.id.action_placeholderFragment_to_replenishment_reservation_detail,bundle)
         Toast.makeText(context,"Replenishment"+pageViewModel.dataReservation[position].replenishment_title+" Clicked", Toast.LENGTH_LONG).show()
 
     }

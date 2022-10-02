@@ -22,18 +22,27 @@
         android:paddingEnd="@dimen/basic_margin"
         android:paddingBottom="@dimen/tiny_spacing">
 
-        <TextView
-            android:id="@+id/replenishmentTitle"
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/replenishmentTitleCard"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/basic_margin"
-            android:layout_marginBottom="@dimen/tiny_spacing"
-            android:fontFamily="@font/roboto_black"
-            android:text="@string/campaign_title"
-            android:textColor="@color/color_2"
-            android:textSize="@dimen/tiny_description"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:cardElevation="0dp">
+            <TextView
+                android:id="@+id/replenishmentTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/basic_margin"
+                android:layout_marginBottom="@dimen/tiny_spacing"
+                android:fontFamily="@font/roboto_black"
+                android:text="@string/campaign_title"
+                android:textColor="@color/color_2"
+                android:textSize="@dimen/tiny_description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.cardview.widget.CardView>
+
 
         <View
             android:id="@+id/view"
@@ -43,7 +52,7 @@
             android:background="@color/color_sperator"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/replenishmentTitle" />
+            app:layout_constraintTop_toBottomOf="@id/replenishmentTitleCard" />
 
 
         <ImageView
@@ -52,14 +61,14 @@
             android:layout_height="@dimen/small_description"
 
             android:layout_marginTop="@dimen/basic_margin"
-android:tint="@color/color_reject"
             android:layout_marginBottom="@dimen/tiny_spacing"
             app:layout_constraintBottom_toTopOf="@+id/replenishmentDescription"
 
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view"
-            app:srcCompat="@drawable/ic_baseline_location_on_24" />
+            app:srcCompat="@drawable/ic_baseline_location_on_24"
+            app:tint="@color/color_reject" />
 
         <TextView
             android:id="@+id/location"
@@ -84,12 +93,13 @@ android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@id/view2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:paddingBottom="@dimen/tiny_spacing"
            />
         <View
             android:id="@+id/view2"
             android:layout_width="match_parent"
             android:layout_height="2sp"
-            android:layout_marginTop="@dimen/tiny_spacing"
+
             android:background="@color/color_sperator"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -108,6 +118,8 @@ android:textColor="@color/color_1"
             android:layout_marginTop="@dimen/basic_margin"
             android:layout_marginBottom="@dimen/tiny_spacing"
             />
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,14 +1,17 @@
 package com.example.mamasan.replenishment_manage
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.AuthFailureError
@@ -16,8 +19,10 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.mamasan.R
 import com.example.mamasan.databinding.FragmentReplenishmentSearchingBinding
 import com.google.gson.Gson
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -56,7 +61,24 @@ class replenishment_searching : Fragment(), OnDetailClicklistener  {
         _binding = FragmentReplenishmentSearchingBinding.inflate(inflater, container, false)
         val root = binding.root
         viewModel = ViewModelProvider(this).get(ViewModel::class.java)
+        val view = inflater.inflate(R.layout.fragment_replenishment_searching,container,false)
+        val nameObserver = Observer<Int> { position  ->
+            val bundle = Bundle()
+            bundle.putInt("id",Integer.parseInt(viewModel.dataReplenishments[position].replenishment_id))
 
+
+        }
+        _binding!!.header.backIcon.setOnClickListener{
+            val intent = Intent(
+                activity,
+                replenishment_list::class.java
+            )
+            startActivity(intent)
+        }
+
+
+        // Observe the LiveData, passing in this activity as the LifecycleOwner and the observer.
+        viewModel.position.observe(viewLifecycleOwner, nameObserver)
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 // on below line we are checking
@@ -143,9 +165,17 @@ class replenishment_searching : Fragment(), OnDetailClicklistener  {
 
 
     override fun onClicked(position: Int) {
+//        val campaignTitle = campaignList[position].campaign_title
 
+//        Log.i("Campaign chosen", "id: $campaignID & name $campaignTitle on click")
 
-        Toast.makeText(context,"Replenishment"+viewModel.dataReplenishments[position].replenishment_title+" Clicked", Toast.LENGTH_LONG).show()
+//        val action = . (viewModel.dataReplenishments[position].replenishment_id)
+//        findNavController().navigate(action)
+        val bundle = Bundle()
+        bundle.putInt("id",Integer.parseInt(viewModel.dataReplenishments[position].replenishment_id))
+        findNavController().navigate(R.id.action_replenishment_searching_to_replenishment_detail, bundle)
+        viewModel.position.setValue(position)
+        Toast.makeText(context,"Replenishment"+viewModel.dataReplenishments[position].replenishment_id +" Clicked", Toast.LENGTH_LONG).show()
     }
 
 

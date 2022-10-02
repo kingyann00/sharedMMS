@@ -6,7 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".replenishment_manage.replenishment_list">
+    <include
+        android:id="@+id/header"
+        layout="@layout/admin_header_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/add_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/basic_margin"
+        android:background="@drawable/replenishment_view_box"
+        android:gravity="center"
+        android:drawablePadding="@dimen/basic_margin"
+        android:padding="@dimen/basic_margin"
+        android:text="Add new Replenishment..."
+        android:backgroundTint="@color/color_approve"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
     <TextView
         android:id="@+id/search_bar"
         android:layout_width="match_parent"
@@ -18,7 +38,7 @@
         android:padding="@dimen/activity_horizontal_margin"
         android:text="Search all Replenishment..."
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/add_bar" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"

@@ -1,5 +1,6 @@
 package com.example.mamasan.replenishment_reservation
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -20,7 +21,11 @@ class replenishment_reservation_list : AppCompatActivity() {
 
         binding = ActivityReplenishmentReservationListBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        binding.header.headerText.text = "Replenishment: Reservation"
+        binding.searchBar.setOnClickListener{
+            val intent = Intent(this,navigation_replenishment_reservation::class.java)
+            startActivity(intent)
+        }
         val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
         val viewPager: ViewPager = binding.viewPager
         viewPager.adapter = sectionsPagerAdapter
