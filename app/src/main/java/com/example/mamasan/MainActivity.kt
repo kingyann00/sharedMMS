@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN);
         supportActionBar?.hide();
-        val intent = Intent(this,replenishment_list::class.java)
+        val intent = Intent(this,MamasanMain::class.java)
         startActivity(intent)
     }
 }

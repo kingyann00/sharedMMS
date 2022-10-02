@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".MamasanMain"
+            android:exported="false" />
+        <activity
             android:name=".replenishment_manage.navigation_replenishment_search"
             android:exported="false" />
         <activity
@@ -29,6 +32,23 @@
             android:exported="false"
             android:label="@string/title_activity_replenishment_reservation_list"
             android:theme="@style/Theme.Mamasan.NoActionBar" />
+        <activity
+            android:name=".BookedCampaignActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignInActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

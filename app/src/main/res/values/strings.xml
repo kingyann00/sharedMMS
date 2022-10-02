@@ -27,4 +27,8 @@
     <string name="title_activity_replenishment_reservation_list">replenishment_reservation_list
     </string>
     <string name="title_activity_replenishment_reservation">replenishment_reservation</string>
+    <string name="main_txt_create_donor_account">Create Donor Account</string>
+    <string name="main_txt_sign_in">Sign In</string>
+    <string name="signup_txt_welcome1">Welcome to MAMASAN</string>
+    <string name="signup_txt_welcome2">Sign up as donor now!</string>
 </resources>
