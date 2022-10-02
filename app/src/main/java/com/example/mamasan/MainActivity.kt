@@ -50,7 +50,11 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
-
+        val btnCCRUD = findViewById<Button>(R.id.buttonCampaingCrud)
+        val intentcrud = Intent(this, activity_boonhin::class.java)
+        btnCCRUD.setOnClickListener {
+            startActivity(intentcrud)
+        }
 
     }
 

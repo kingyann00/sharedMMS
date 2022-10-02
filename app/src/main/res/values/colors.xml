@@ -27,5 +27,5 @@
     <color name="color_txt_intro_moneyD">#001E2C</color>
     <color name="color_txt_min_amount">#C5C7C9</color>
     <color name="color_error">#b00020</color>
-
+    <color name="color_horizantal_line">#C5C7C9</color>
 </resources>

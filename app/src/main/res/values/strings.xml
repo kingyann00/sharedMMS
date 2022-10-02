@@ -31,6 +31,7 @@
     <string name="main_txt_sign_in">Sign In</string>
     <string name="signup_txt_welcome1">Welcome to MAMASAN</string>
     <string name="signup_txt_welcome2">Sign up as donor now!</string>
+    <string name="campaign_detail">Blablabla</string>
 
     <string-array name="booking_time">
         <item>9:00 AM</item>

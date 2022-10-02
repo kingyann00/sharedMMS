@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium_spacing_margin">
+
+            <ImageView
+                android:id="@+id/campaign_Image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/img_height"
+                android:src="@drawable/campaign_img_test"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/horizantal_line1"
+                android:layout_width="match_parent"
+                android:layout_height="2sp"
+                android:layout_marginTop="@dimen/basic_margin"
+                android:background="@color/color_horizantal_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/campaign_Image" />
+
+
+            <TextView
+                android:id="@+id/campaign_donordetail_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/basic_margin"
+                android:layout_marginTop="@dimen/medium_spacing_margin"
+                android:fontFamily="@font/roboto_black"
+                android:text="@string/campaign_title"
+                android:textColor="@color/color_2"
+                android:textSize="@dimen/title_size"
+                app:layout_constraintTop_toBottomOf="@+id/campaign_Image"
+                tools:layout_editor_absoluteX="10dp" />
+
+            <ImageView
+                android:id="@+id/calendar_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/basic_margin"
+                android:layout_marginTop="@dimen/basic_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/campaign_donordetail_title"
+                app:srcCompat="@drawable/ic_baseline_calendar_today_24" />
+
+            <TextView
+                android:id="@+id/campaign_donordetail_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_margin"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/roboto_black"
+                android:text="2022-03-08"
+                android:textColor="@color/color_2"
+                app:layout_constraintStart_toEndOf="@+id/calendar_icon"
+                app:layout_constraintTop_toBottomOf="@+id/campaign_donordetail_title" />
+
+            <ImageView
+                android:id="@+id/location_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/basic_margin"
+                android:layout_marginTop="@dimen/basic_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/calendar_icon"
+                app:srcCompat="@drawable/ic_baseline_location_on_24" />
+
+            <TextView
+                android:id="@+id/campaign_donordetail_location"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_margin"
+                android:layout_marginTop="@dimen/basic_margin"
+                android:fontFamily="@font/roboto_black"
+                android:text="Kuala Lumpur, Taman Melati, LALA"
+                android:textColor="@color/color_2"
+                android:justificationMode="inter_word"
+                app:layout_constraintStart_toEndOf="@+id/calendar_icon"
+                app:layout_constraintTop_toBottomOf="@+id/campaign_donordetail_date" />
+
+            <ImageView
+                android:id="@+id/time_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/basic_margin"
+                android:layout_marginEnd="@dimen/spacing_margin"
+                app:layout_constraintEnd_toStartOf="@id/campaign_donordetail_time_StartEnd"
+                app:layout_constraintTop_toBottomOf="@+id/campaign_donordetail_title"
+                app:srcCompat="@drawable/ic_baseline_access_time_24" />
+
+            <TextView
+                android:id="@+id/campaign_donordetail_time_StartEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="@dimen/basic_margin"
+                android:fontFamily="@font/roboto_black"
+                android:text="19:00 - 21:00"
+                android:textColor="@color/color_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/campaign_donordetail_title" />
+
+            <ImageView
+                android:id="@+id/people_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/basic_margin"
+                android:layout_marginEnd="@dimen/spacing_margin"
+                app:layout_constraintEnd_toStartOf="@id/campaign_donordetail_people_left"
+                app:layout_constraintTop_toBottomOf="@+id/calendar_icon"
+                app:srcCompat="@drawable/ic_baseline_people_24" />
+
+            <TextView
+                android:id="@+id/campaign_donordetail_people_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="@dimen/basic_margin"
+                android:fontFamily="@font/roboto_black"
+                android:text="100"
+                android:textColor="@color/color_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/campaign_donordetail_date" />
+
+            <View
+                android:id="@+id/horizantal_line2"
+                android:layout_width="match_parent"
+                android:layout_height="2sp"
+                android:layout_marginTop="@dimen/basic_margin"
+                android:background="@color/color_horizantal_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/campaign_donordetail_location" />
+
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="15dp"
+                android:fillViewport="true"
+                android:paddingBottom="@dimen/medium_spacing_margin"
+                app:layout_constraintTop_toBottomOf="@+id/horizantal_line2">
+
+                <TextView
+                    android:id="@+id/campaign_donordetail_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="@dimen/basic_margin"
+                    android:layout_marginEnd="@dimen/basic_margin"
+                    android:scrollbars="vertical"
+                    android:text="@string/campaign_detail"
+                    android:justificationMode="inter_word" />
+            </ScrollView>
+
+            <View
+                android:id="@+id/horizantal_line3"
+                android:layout_width="match_parent"
+                android:layout_height="2sp"
+                android:background="@color/color_horizantal_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/scrollView" />
+
+
+            <Button
+                android:id="@+id/bookCampaign_Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_spacing_margin"
+                android:fontFamily="@font/roboto_black"
+                android:padding="@dimen/spacing_margin"
+                android:text="Book Campaign"
+                android:textSize="@dimen/title_size"
+                app:backgroundTint="@color/color_approve"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/horizantal_line3" />
+
+            <TextView
+                android:id="@+id/campaign_donortdetail_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/basic_margin"
+                android:layout_marginTop="@dimen/medium_spacing_margin"
+                android:fontFamily="@font/roboto_black"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/campaign_Image" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/campaign_list_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/basic_margin"
+                android:fontFamily="@font/roboto_black"
+                android:text="Campaign List"
+                android:textColor="@color/color_2"
+                android:textSize="@dimen/title_h2"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/createCampaign_Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/tiny_spacing"
+                android:layout_marginEnd="@dimen/tiny_spacing"
+                android:backgroundTint="@color/color_2"
+                android:drawableStart="@drawable/ic_baseline_add_alarm_24"
+                app:layout_constraintBottom_toBottomOf="@+id/campaign_list_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/campaign_list_label"
+                app:srcCompat="@drawable/ic_baseline_add_24" />
+
+            <EditText
+                android:id="@+id/searchCampaign_EditText"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="@dimen/basic_margin"
+                android:layout_marginTop="@dimen/tiny_spacing"
+                android:layout_marginEnd="@dimen/basic_margin"
+                android:background="@drawable/edittest_shadow"
+                android:elevation="10dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/tiny_spacing"
+                android:paddingEnd="@dimen/tiny_spacing"
+                android:hint="Search Campaign"
+                android:textSize="@dimen/small_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/createCampaign_Button" />
+
+            <Spinner
+                android:id="@+id/spinner_FilterCampaign"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="@dimen/basic_margin"
+                android:layout_marginEnd="@dimen/basic_margin"
+                android:background="@drawable/edittest_shadow"
+                android:elevation="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/searchCampaign_EditText"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/searchCampaign_EditText"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/admin_campaign_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_spacing_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinner_FilterCampaign"></androidx.recyclerview.widget.RecyclerView>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="216dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
