@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="Donation.MoneyDonation"
+        android:background="@color/color_1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin200"
+            android:background="@drawable/donate_card">
+
+            <TextView
+                android:id="@+id/introTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin32"
+                android:text="TextView"
+                android:textColor="@color/color_txt_intro_moneyD"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Enter your donation amount" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin64"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="RM "
+                android:enabled="false"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/introTxt" />
+
+            <EditText
+                android:id="@+id/amountEditTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin64"
+                android:ems="10"
+                android:inputType="number"
+                android:text="0"
+                android:textColor="@color/color_txt_intro_moneyD"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
+                app:layout_constraintTop_toBottomOf="@+id/introTxt" />
+
+            <TextView
+                android:id="@+id/minAmiuntTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin64"
+                android:text="Min Donate amount is RM 10"
+                android:textColor="@color/color_txt_min_amount"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/amountEditTxt" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/amountRM50btn"
+                android:layout_width="100dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin48"
+                android:background="@drawable/donate_amount_btn"
+                android:fontFamily="sans-serif-condensed"
+                android:text="RM50"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/minAmiuntTxt" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/amountRM100btn"
+                android:layout_width="100dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="@dimen/margin48"
+                android:background="@drawable/donate_amount_btn"
+                android:fontFamily="sans-serif-condensed"
+                android:text="RM100"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/amountRM200btn"
+                app:layout_constraintStart_toEndOf="@+id/amountRM50btn"
+                app:layout_constraintTop_toBottomOf="@+id/minAmiuntTxt" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/amountRM200btn"
+                android:layout_width="100dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="@dimen/margin48"
+                android:layout_marginEnd="@dimen/margin64"
+                android:background="@drawable/donate_amount_btn"
+                android:fontFamily="sans-serif-condensed"
+                android:text="RM200"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/minAmiuntTxt" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/amountRM500btn"
+                android:layout_width="100dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin32"
+                android:background="@drawable/donate_amount_btn"
+                android:fontFamily="sans-serif-condensed"
+                android:text="RM500"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/amountRM100btn" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/amountRM1000btn"
+                android:layout_width="100dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="@dimen/margin32"
+                android:background="@drawable/donate_amount_btn"
+                android:fontFamily="sans-serif-condensed"
+                android:text="RM1,000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/amountRM2000btn"
+                app:layout_constraintStart_toEndOf="@+id/amountRM500btn"
+                app:layout_constraintTop_toBottomOf="@+id/amountRM100btn" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/amountRM2000btn"
+                android:layout_width="100dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="@dimen/margin32"
+                android:layout_marginEnd="@dimen/margin64"
+                android:background="@drawable/donate_amount_btn"
+                android:fontFamily="sans-serif-condensed"
+                android:text="RM2,000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/amountRM200btn" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/donateBtn"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin48"
+                android:layout_marginEnd="@dimen/margin64"
+                android:background="@drawable/donate_btn"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Donate Now"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/amountRM1000btn" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

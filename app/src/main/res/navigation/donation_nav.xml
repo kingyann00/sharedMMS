@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/donation_nav"
+    app:startDestination="@id/donation">
+
+    <fragment
+        android:id="@+id/firstDonation"
+        android:name="com.example.mamasan.Donation.FirstDonation"
+        android:label="Donation"
+        tools:layout="@layout/fragment_first_donation" >
+        <action
+            android:id="@+id/action_firstDonation_to_moneyDonation"
+            app:destination="@id/moneyDonation" />
+        <action
+            android:id="@+id/action_firstDonation_to_bookingDonation"
+            app:destination="@id/bookingDonation" />
+    </fragment>
+    <fragment
+        android:id="@+id/moneyDonation"
+        android:name="com.example.mamasan.Donation.MoneyDonation"
+        android:label="Money Donation"
+        tools:layout="@layout/fragment_money_donation">
+        <action
+            android:id="@+id/action_moneyDonation_to_donateSuccess"
+            app:destination="@id/donateSuccess" />
+    </fragment>
+    <fragment
+        android:id="@+id/donateSuccess"
+        android:name="com.example.mamasan.Donation.DonateSuccess"
+        android:label="Money Donation"
+        tools:layout="@layout/fragment_donate_success">
+        <action
+            android:id="@+id/action_donateSuccess_to_donation"
+            app:destination="@id/donation" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingDonation"
+        android:name="com.example.mamasan.Donation.BookingDonation"
+        android:label="Booking Donation Time"
+        tools:layout="@layout/fragment_booking_donation">
+        <action
+            android:id="@+id/action_bookingDonation_to_foodDonation"
+            app:destination="@id/foodDonation" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodDonation"
+        android:name="com.example.mamasan.Donation.FoodDonation"
+        android:label="Food Donation"
+        tools:layout="@layout/fragment_food_donation">
+        <action
+            android:id="@+id/action_foodDonation_to_manageFood"
+            app:destination="@id/manageFood" />
+        <action
+            android:id="@+id/action_foodDonation_to_donation"
+            app:destination="@id/donation" />
+    </fragment>
+    <fragment
+        android:id="@+id/manageFood"
+        android:name="com.example.mamasan.Donation.ManageFood"
+        android:label="Food details"
+        tools:layout="@layout/fragment_manage_food">
+        <action
+            android:id="@+id/action_manageFood_to_foodDonation"
+            app:destination="@id/foodDonation" />
+    </fragment>
+    <fragment
+        android:id="@+id/donation"
+        android:name="com.example.mamasan.Donation.Donation"
+        android:label="Donation"
+        tools:layout="@layout/fragment_donation">
+        <action
+            android:id="@+id/action_donation_to_firstDonation"
+            app:destination="@id/firstDonation" />
+        <action
+            android:id="@+id/action_donation_to_moneyDonationRecord"
+            app:destination="@id/moneyDonationRecord" />
+    </fragment>
+    <fragment
+        android:id="@+id/moneyDonationRecord"
+        android:name="com.example.mamasan.Donation.MoneyDonationRecord"
+        android:label="MoneyDonationRecord"
+        tools:layout="@layout/fragment_money_donation_record">
+        <action
+            android:id="@+id/action_moneyDonationRecord_to_bookingDonationRecord"
+            app:destination="@id/bookingDonationRecord" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingDonationRecord"
+        android:name="com.example.mamasan.Donation.BookingDonationRecord"
+        android:label="BookingDonationRecord"
+        tools:layout="@layout/fragment_booking_donation_record">
+        <action
+            android:id="@+id/action_bookingDonationRecord_to_moneyDonationRecord"
+            app:destination="@id/moneyDonationRecord" />
+        <action
+            android:id="@+id/action_bookingDonationRecord_to_donationFoodDetail"
+            app:destination="@id/donationFoodDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/donationFoodDetail"
+        android:name="com.example.mamasan.Donation.DonationFoodDetail"
+        android:label="DonationFoodDetail"
+        tools:layout="@layout/fragment_donation_food_detail">
+        <action
+            android:id="@+id/action_donationFoodDetail_to_bookingDonationRecord"
+            app:destination="@id/bookingDonationRecord" />
+        <action
+            android:id="@+id/action_donationFoodDetail_to_donation"
+            app:destination="@id/donation" />
+    </fragment>
+
+</navigation>

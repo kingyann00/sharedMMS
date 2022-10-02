@@ -31,4 +31,21 @@
     <string name="main_txt_sign_in">Sign In</string>
     <string name="signup_txt_welcome1">Welcome to MAMASAN</string>
     <string name="signup_txt_welcome2">Sign up as donor now!</string>
+
+    <string-array name="booking_time">
+        <item>9:00 AM</item>
+        <item>10:00 AM</item>
+        <item>11:00 AM</item>
+        <item>12:00 PM</item>
+        <item>2:00 PM</item>
+        <item>3:00 PM</item>
+        <item>4:00 PM</item>
+        <item>5:00 PM</item>
+        <item>6:00 PM</item>
+    </string-array>
+    <string-array name="food_donation_status">
+        <item>Coming Soon</item>
+        <item>Completed</item>
+        <item>Cancelled</item>
+    </string-array>
 </resources>

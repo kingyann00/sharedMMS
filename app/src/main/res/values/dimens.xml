@@ -25,4 +25,14 @@
     <dimen name="basic_elevation">10dp</dimen>
     <dimen name="basic_radius">10dp</dimen>
     <dimen name="large_radius">25dp</dimen>
+
+    <dimen name="margin8">8px</dimen>
+    <dimen name="margin16">16px</dimen>
+    <dimen name="margin32">32px</dimen>
+    <dimen name="margin36">36px</dimen>
+    <dimen name="margin48">48px</dimen>
+    <dimen name="margin56">56px</dimen>
+    <dimen name="margin64">64px</dimen>
+    <dimen name="margin80">80px</dimen>
+    <dimen name="margin200">200px</dimen>
 </resources>

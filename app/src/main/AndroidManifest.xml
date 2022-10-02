@@ -23,6 +23,9 @@
             android:name=".replenishment_manage.navigation_replenishment_search"
             android:exported="false" />
         <activity
+            android:name=".DonationActivity"
+            android:exported="false" />
+        <activity
             android:name=".replenishment_manage.replenishment"
             android:exported="false"
             android:label="@string/title_activity_replenishment_list"

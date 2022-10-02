@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Donation.MoneyDonationRecord"
+        android:background="@color/color_1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin64"
+            android:background="@drawable/donate_card">
+
+
+            <TextView
+                android:id="@+id/mdonationListTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin64"
+                android:text="Money Donation Record"
+                android:textColor="@color/color_2"
+                android:textSize="@dimen/margin48"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btnGoFoodRecord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin48"
+                android:layout_marginEnd="@dimen/margin64"
+                android:backgroundTint="@color/color_2"
+                android:elevation="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/materialDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_fastfood_24"
+                app:tint="@color/white" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/materialDivider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginEnd="@dimen/margin64"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mdonationListTxt" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewMdonation"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin16"
+                android:layout_marginEnd="@dimen/margin64"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerMdoantionDate"
+                app:layout_constraintVertical_bias="0.0">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <Spinner
+                android:id="@+id/spinnerMdoantionDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin48"
+                app:layout_constraintEnd_toStartOf="@+id/btnSearchDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mdonationListTxt" />
+
+            <ImageButton
+                android:id="@+id/btnSearchDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin32"
+                android:layout_marginEnd="@dimen/margin64"
+                android:backgroundTint="@color/color_2"
+                android:elevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mdonationListTxt"
+                app:srcCompat="@drawable/ic_baseline_search_24"
+                app:tint="@color/white" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

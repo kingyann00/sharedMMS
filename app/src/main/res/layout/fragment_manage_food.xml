@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="Donation.ManageFood"
+        android:background="@color/color_1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin64"
+            android:background="@drawable/donate_card">
+
+
+            <TextView
+                android:id="@+id/txtFoodDes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin48"
+                android:text="Food Description"
+                android:textColor="@color/color_2"
+                android:textSize="@dimen/margin48"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editFoodName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin16"
+                android:layout_marginEnd="@dimen/margin64"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtFoodDes" />
+
+            <TextView
+                android:id="@+id/txtFoodType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin16"
+                android:text="Food Type"
+                android:textColor="@color/color_2"
+                android:textSize="@dimen/margin48"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editFoodName" />
+
+            <Spinner
+                android:id="@+id/spinnerFoodType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin16"
+                android:layout_marginEnd="@dimen/margin64"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtFoodType" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/addFoodBtn"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin32"
+                android:layout_marginEnd="@dimen/margin64"
+                android:backgroundTint="@color/color_2"
+                android:elevation="10dp"
+                android:outlineProvider="bounds"
+                android:text="Add to Food List"
+                android:textColor="@color/white"
+                android:textSize="@dimen/margin48"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editQuantityUnit" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/editFoodBtn"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="@dimen/margin16"
+                android:layout_marginTop="@dimen/margin32"
+                android:layout_marginEnd="@dimen/margin64"
+                android:backgroundTint="@color/color_1"
+                android:elevation="10dp"
+                android:outlineProvider="bounds"
+                android:text="Update"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:textSize="@dimen/margin48"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/divider"
+                app:layout_constraintTop_toBottomOf="@+id/editQuantityUnit" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/deleteFoodBtn"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin32"
+                android:layout_marginEnd="@dimen/margin36"
+                android:backgroundTint="@color/color_error"
+                android:elevation="10dp"
+                android:outlineProvider="bounds"
+                android:text="Remove"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:textSize="@dimen/margin48"
+                app:layout_constraintEnd_toStartOf="@+id/divider"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editQuantityUnit" />
+
+            <TextView
+                android:id="@+id/divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editSkuQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin16"
+                android:layout_marginEnd="@dimen/margin64"
+                android:ems="10"
+                android:inputType="number"
+                android:minHeight="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtQuantity" />
+
+            <TextView
+                android:id="@+id/txtQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin16"
+                android:text="Quantity(sku)"
+                android:textColor="@color/color_2"
+                android:textSize="@dimen/margin48"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerFoodType" />
+
+            <Spinner
+                android:id="@+id/spinnerSKU"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin16"
+                android:layout_marginTop="@dimen/margin16"
+                android:layout_marginEnd="@dimen/margin64"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/editSkuQuantity"
+                app:layout_constraintTop_toBottomOf="@+id/txtQuantity" />
+
+            <TextView
+                android:id="@+id/txtQuantityUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin16"
+                android:text="Quantity(Unit)"
+                android:textColor="@color/color_2"
+                android:textSize="@dimen/margin48"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editSkuQuantity" />
+
+            <EditText
+                android:id="@+id/editQuantityUnit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin16"
+                android:layout_marginEnd="@dimen/margin64"
+                android:minHeight="48dp"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtQuantityUnit" />
+
+            <TextView
+                android:id="@+id/txtFoodID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@+id/txtFoodDes"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

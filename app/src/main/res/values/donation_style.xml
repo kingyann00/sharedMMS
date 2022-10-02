@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="donationSuccessHistory">
+        <item name="background">@color/color_1</item>
+    </style>
+    <style name="bookingDateBtn">
+        <item name="android:width">110dp</item>
+        <item name="android:elevation">10dp</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/margin36</item>
+        <item name="android:outlineProvider">bounds</item>
+        <item name="android:padding">@dimen/margin48</item>
+    </style>
+    <style name="donationFirstBtn">
+        <item name="android:textSize">15dp</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:paddingTop">145dp</item>
+        <item name="android:paddingBottom">215dp</item>
+        <item name="fontFamily">monospace</item>
+    </style>
+</resources>

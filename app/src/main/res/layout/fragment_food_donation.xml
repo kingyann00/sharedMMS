@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="Donation.FoodDonation"
+        android:background="@color/color_1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin64"
+            android:background="@drawable/donate_card">
+
+
+            <TextView
+                android:id="@+id/foodListTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin64"
+                android:text="FOOD LIST"
+                android:textColor="@color/color_2"
+                android:textSize="@dimen/margin48"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btnAddFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin48"
+                android:layout_marginEnd="@dimen/margin64"
+                android:backgroundTint="@color/color_2"
+                android:elevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_add_24"
+                app:tint="@color/white" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/materialDivider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginEnd="@dimen/margin64"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/foodListTxt" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginTop="@dimen/margin32"
+                android:layout_marginEnd="@dimen/margin64"
+                android:layout_marginBottom="@dimen/margin32"
+                app:layout_constraintBottom_toTopOf="@+id/btnCancelDonation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialDivider">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCompleteDonation"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="@dimen/margin16"
+                android:layout_marginEnd="@dimen/margin64"
+                android:layout_marginBottom="@dimen/margin48"
+                android:backgroundTint="@color/color_1"
+                android:elevation="10dp"
+                android:outlineProvider="bounds"
+                android:text="Complete Donation"
+                android:textColor="@color/white"
+                android:textSize="@dimen/margin48"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/divider" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCancelDonation"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="@dimen/margin64"
+                android:layout_marginEnd="@dimen/margin36"
+                android:layout_marginBottom="@dimen/margin48"
+                android:backgroundTint="@color/color_error"
+                android:elevation="10dp"
+                android:outlineProvider="bounds"
+                android:text="Cancel Donation"
+                android:textColor="@color/white"
+                android:textSize="@dimen/margin48"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/divider"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtFoodIsEmpty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
+                app:layout_constraintEnd_toStartOf="@+id/btnAddFood"
+                app:layout_constraintStart_toEndOf="@+id/foodListTxt"
+                app:layout_constraintTop_toBottomOf="@+id/materialDivider" />
+
+            <TextView
+                android:id="@+id/txtEmptyFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialDivider" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

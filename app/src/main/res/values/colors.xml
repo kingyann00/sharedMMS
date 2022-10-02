@@ -22,5 +22,10 @@
     <color name="color_sperator">#D8D8D8</color>
     <color name="register_grey">#5C5F61</color>
     <color name="mamasan_green">#309107</color>
+    <color name="color_donation_back">#5f9ea0</color>
+    <color name="color_back_first_donation">#DCE3E9</color>
+    <color name="color_txt_intro_moneyD">#001E2C</color>
+    <color name="color_txt_min_amount">#C5C7C9</color>
+    <color name="color_error">#b00020</color>
 
 </resources>
