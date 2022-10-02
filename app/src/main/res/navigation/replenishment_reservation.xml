@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/replenishment_reservation"
+    app:startDestination="@id/replenishment_reservation_search">
+
+    <fragment
+        android:id="@+id/replenishment_reservation_detail"
+        android:name="com.example.mamasan.replenishment_reservation.replenishment_reservation_detail"
+        android:label="fragment_replenishment_reservation_detail"
+        tools:layout="@layout/fragment_replenishment_reservation_detail" >
+        <action
+            android:id="@+id/action_replenishment_reservation_detail_to_placeholderFragment"
+            app:destination="@id/placeholderFragment" />
+        <action
+            android:id="@+id/action_replenishment_reservation_detail_to_replenishment_reservation_search"
+            app:destination="@id/replenishment_reservation_search" />
+    </fragment>
+    <fragment
+        android:id="@+id/placeholderFragment"
+        android:name="com.example.mamasan.replenishment_reservation.ui.main.PlaceholderFragment"
+        android:label="fragment_replenishment_reservation_list"
+        tools:layout="@layout/fragment_replenishment_reservation_list" >
+        <action
+            android:id="@+id/action_placeholderFragment_to_replenishment_reservation_detail"
+            app:destination="@id/replenishment_reservation_detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/replenishment_reservation_search"
+        android:name="com.example.mamasan.replenishment_reservation.replenishment_reservation_search"
+        android:label="replenishment_reservation_search"
+        tools:layout="@layout/fragment_replenishment_reservation_search">
+        <action
+            android:id="@+id/action_replenishment_reservation_search_to_replenishment_reservation_detail"
+            app:destination="@id/replenishment_reservation_detail" />
+    </fragment>
+</navigation>

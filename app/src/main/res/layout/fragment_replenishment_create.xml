@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/activity_horizontal_margin"
+    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="@dimen/basic_margin"
+    android:layout_marginBottom="@dimen/basic_margin"
+
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="5dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="@dimen/basic_margin"
+        android:paddingEnd="@dimen/basic_margin"
+        android:paddingBottom="@dimen/tiny_spacing">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/replenishmentTitleCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="0dp"
+
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                >
+                <TextView
+                    android:id="@+id/replenishmentHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/tiny_spacing"
+                    android:fontFamily="@font/roboto_black"
+                    android:text="Replenishment : Information"
+                    android:textColor="@color/color_2"
+                    android:textSize="@dimen/tiny_description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="@dimen/tiny_description"
+                    android:layout_height="@dimen/tiny_description"
+                    app:layout_constraintBottom_toBottomOf="@+id/replenishmentHeader"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/replenishmentHeader"
+                    app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="2sp"
+            android:layout_marginTop="@dimen/tiny_spacing"
+            android:background="@color/color_sperator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/replenishmentTitleCard" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/replenishmentInformationCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintInformation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/replenishmentTitle_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Replenishment Title"
+                    android:textColor="@color/color_2"
+                    android:textSize="@dimen/tiny_description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="@dimen/basic_margin"/>
+
+                <EditText
+                    android:id="@+id/replenishmentTitle_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+
+                    android:hint="text somthing..."
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/replenishmentTitle_label"
+                    android:layout_marginTop="@dimen/tiny_spacing"/>
+
+                <TextView
+                    android:id="@+id/replenishmentDescription_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description"
+                    android:textColor="@color/color_2"
+                    android:textSize="@dimen/tiny_description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/replenishmentTitle_field"
+                    android:layout_marginTop="@dimen/basic_margin"/>
+
+                <EditText
+                    android:id="@+id/replenishmentDescription_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:hint="text somthing..."
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/replenishmentDescription_label"
+                    android:layout_marginTop="@dimen/tiny_spacing"/>
+
+                <TextView
+                    android:id="@+id/replenishmentDate_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Replenishment Date"
+                    android:textColor="@color/color_2"
+                    android:textSize="@dimen/tiny_description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/replenishmentDescription_field"
+                    android:layout_marginTop="@dimen/basic_margin"/>
+
+
+                <CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/replenishmentDate_label"
+                    android:layout_marginTop="@dimen/tiny_spacing"
+
+                    />
+
+                <TextView
+                    android:id="@+id/replenishmentDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/replenishment_view_box"
+                    android:gravity="center"
+                    android:padding="@dimen/basic_margin"
+                    android:text="@string/DateTime"
+                    android:textSize="@dimen/title_h3"
+                    app:layout_constraintTop_toBottomOf="@+id/replenishmentDate_label"
+                    android:layout_marginTop="@dimen/basic_margin" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

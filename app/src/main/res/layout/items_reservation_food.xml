@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/foodTittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/campaign_food_title"
+        android:textColor="@color/color_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/foodType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/campaign_food_type"
+        android:textSize="@dimen/tiny_description"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodTittle" />
+
+
+    <TextView
+        android:id="@+id/stok_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20"
+        android:textColor="@color/color_1"
+        android:textSize="@dimen/supertiny_description"
+        app:layout_constraintBottom_toTopOf="@id/donation_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodType" />
+
+    <TextView
+        android:id="@+id/plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/tiny_spacing"
+        android:text="+"
+        android:textSize="@dimen/supertiny_description"
+
+        app:layout_constraintBottom_toBottomOf="@+id/stok_quantity"
+        app:layout_constraintStart_toEndOf="@+id/stok_quantity"
+        app:layout_constraintTop_toTopOf="@+id/stok_quantity" />
+
+    <TextView
+        android:id="@+id/donate_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/tiny_spacing"
+        android:text="@string/food_quantity"
+        android:textColor="@color/color_2"
+        android:textSize="@dimen/supertiny_description"
+        app:layout_constraintBottom_toBottomOf="@+id/stok_quantity"
+        app:layout_constraintStart_toEndOf="@+id/plus"
+        app:layout_constraintTop_toTopOf="@+id/stok_quantity" />
+
+    <TextView
+        android:id="@+id/unit_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="5dp"
+        android:text="@string/unit_label"
+        android:textSize="@dimen/supertiny_description"
+        app:layout_constraintBottom_toBottomOf="@+id/stok_quantity"
+        app:layout_constraintStart_toEndOf="@+id/donate_quantity"
+        app:layout_constraintTop_toTopOf="@+id/stok_quantity" />
+
+
+    <ProgressBar
+        android:id="@+id/donation_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/tiny_spacing"
+        android:progressTint="@color/color_2"
+        app:layout_constraintBottom_toBottomOf="@+id/demand_quantity"
+        app:layout_constraintEnd_toStartOf="@+id/demand_quantity"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/stok_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/tiny_spacing"
+        android:progressTint="@color/color_approve"
+        app:layout_constraintBottom_toBottomOf="@+id/demand_quantity"
+        app:layout_constraintEnd_toStartOf="@+id/demand_quantity"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/max_donation_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/tiny_spacing"
+        android:progressTint="@color/color_reject"
+        app:layout_constraintBottom_toBottomOf="@+id/demand_quantity"
+        app:layout_constraintEnd_toStartOf="@+id/demand_quantity"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/tiny_spacing"
+        android:progressTint="@color/color_reject"
+        app:layout_constraintBottom_toBottomOf="@+id/demand_quantity"
+        app:layout_constraintEnd_toStartOf="@+id/demand_quantity"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/demand_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30"
+        app:layout_constraintBottom_toBottomOf="@+id/progress_unit_label"
+        app:layout_constraintEnd_toStartOf="@+id/progress_unit_label"
+        app:layout_constraintHorizontal_bias="0.5"
+
+        app:layout_constraintTop_toTopOf="@+id/progress_unit_label"
+
+        android:layout_marginEnd="@dimen/tiny_spacing"/>
+
+
+    <TextView
+        android:id="@+id/progress_unit_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/unit_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/pending_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:progressTintMode="src_in"
+        android:indeterminateTint="@color/color_reject"
+        app:layout_constraintBottom_toTopOf="@+id/demand_quantity"
+        app:layout_constraintEnd_toEndOf="@+id/progress_unit_label"
+        app:layout_constraintStart_toStartOf="@+id/demand_quantity"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/check_bttn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/ic_baseline_check_24"
+        app:layout_constraintBottom_toTopOf="@+id/demand_quantity"
+        app:layout_constraintEnd_toEndOf="@+id/progress_unit_label"
+        app:layout_constraintStart_toStartOf="@+id/demand_quantity"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/color_approve"
+        android:visibility="invisible"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/foodName"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/campaign_food_title"
+        android:textColor="@color/color_2"
+
+        app:layout_constraintBottom_toTopOf="@+id/foodType"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/foodType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/campaign_food_type"
+        android:textSize="@dimen/tiny_description"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodName" />
+
+    <TextView
+        android:id="@+id/SKU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/tiny_spacing"
+        android:text="@string/campaign_sku"
+
+        android:textSize="@dimen/tiny_description"
+        app:layout_constraintBottom_toBottomOf="@+id/skuQuantity"
+        app:layout_constraintStart_toEndOf="@+id/skuQuantity"
+        app:layout_constraintTop_toTopOf="@+id/skuQuantity" />
+
+    <TextView
+        android:id="@+id/sku_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sku_label"
+        android:textColor="@color/color_1"
+        android:textSize="@dimen/tiny_description"
+        app:layout_constraintBottom_toBottomOf="@+id/foodName"
+        app:layout_constraintStart_toEndOf="@+id/foodName"
+        app:layout_constraintTop_toTopOf="@+id/foodName" />
+
+    <TextView
+        android:id="@+id/quantity_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/quantity_label"
+        android:textColor="@color/color_1"
+        android:textSize="@dimen/tiny_description"
+        app:layout_constraintBottom_toBottomOf="@+id/sku_label"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+
+        app:layout_constraintStart_toEndOf="@+id/SKU"
+        app:layout_constraintTop_toTopOf="@+id/sku_label" />
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/food_quantity"
+
+
+        app:layout_constraintBottom_toBottomOf="@+id/foodType"
+        app:layout_constraintStart_toStartOf="@+id/quantity_label"
+        app:layout_constraintTop_toTopOf="@+id/foodType" />
+
+    <TextView
+        android:id="@+id/unit_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/unit_label"
+
+        android:textSize="@dimen/tiny_description"
+        android:layout_marginStart="@dimen/tiny_spacing"
+        app:layout_constraintBottom_toBottomOf="@+id/quantity"
+        app:layout_constraintStart_toEndOf="@+id/quantity"
+        app:layout_constraintTop_toTopOf="@+id/quantity" />
+
+    <TextView
+        android:id="@+id/skuQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/food_measurement"
+
+        app:layout_constraintBottom_toBottomOf="@+id/foodType"
+        app:layout_constraintStart_toStartOf="@+id/sku_label"
+        app:layout_constraintTop_toTopOf="@+id/foodType" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="50dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/color_reject"
+        android:drawableEnd="@drawable/ic_baseline_close_24"
+        android:drawableTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/foodType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/foodName" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

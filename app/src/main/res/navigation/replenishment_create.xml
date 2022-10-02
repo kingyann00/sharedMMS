@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/replenishment_create"
+    app:startDestination="@id/replenishment_create2">
+
+    <fragment
+        android:id="@+id/replenishment_create2"
+        android:name="com.example.mamasan.replenishment_manage.replenishment_create"
+        android:label="replenishment_create"
+        tools:layout="@layout/fragment_replenishment_create"/>
+</navigation>
