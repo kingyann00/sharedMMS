@@ -28,8 +28,8 @@ class Fragment_DonorCampaign_Detail : Fragment() {
     private lateinit var binding: FragmentDonorCampaignDetailBinding
     private val args: Fragment_DonorCampaign_DetailArgs by navArgs()
 
-    private val URLCheckBookingStatus: String = "http://10.0.2.2:8080/mamasan_db_connects/check_book_status.php"
-    private val URLDonorCampaignDetail: String = "http://10.0.2.2:8080/mamasan_db_connects/retrieve_donee_campaign.php"
+    private val URLCheckBookingStatus: String = "http://10.0.2.2/mamasan/check_book_status.php"
+    private val URLDonorCampaignDetail: String = "http://10.0.2.2/mamasan/retrieve_donee_campaign.php"
     private lateinit var donorCampaignList: ArrayList<DonorCampaign>
 
     override fun onCreateView(

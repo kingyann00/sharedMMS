@@ -26,7 +26,7 @@ class Fragment_Campaign_Detail : Fragment() {
     private lateinit var binding: FragmentCampaignDetailBinding
     private val args: Fragment_Campaign_DetailArgs by navArgs()
 
-    private val URLCampaignDetail:String = "http://10.0.2.2:8080/mamasan_db_connects/campaign_detail.php"
+    private val URLCampaignDetail:String = "http://10.0.2.2/mamasan/campaign_detail.php"
     private lateinit var campaignList: ArrayList<Campaign>
 
     override fun onCreateView(

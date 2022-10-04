@@ -37,7 +37,7 @@ class Fragment_Donor_Campaign_List : Fragment(),DonorCampaignAdapter.OnItemClick
     }
 
     fun retrieveDoneeCampaign() {
-        val URLRetrieveCampaign: String = "http://10.0.2.2:8080/mamasan_db_connects/retrieve_campaign.php"
+        val URLRetrieveCampaign: String = "http://10.0.2.2/mamasan/retrieve_campaign.php"
         donorCampaignList = ArrayList()
 
         val stringRequest: StringRequest = object : StringRequest(

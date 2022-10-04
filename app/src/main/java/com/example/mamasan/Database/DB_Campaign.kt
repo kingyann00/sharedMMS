@@ -14,10 +14,10 @@ import org.json.JSONObject
 
 class DB_Campaign(){
 
-    private val URLCreateCampaign :String = "http://10.0.2.2:8080/mamasan_db_connects/create_campaign.php"
-    private val URLUpdateCampaign :String = "http://10.0.2.2:8080/mamasan_db_connects/update_campaign.php"
-    private val URLDeleteCampaign :String = "http://10.0.2.2:8080/mamasan_db_connects/delete_campaign.php"
-    private val URLBookCampaign :String = "http://10.0.2.2:8080/mamasan_db_connects/book_campaign.php"
+    private val URLCreateCampaign :String = "http://10.0.2.2/mamasan/create_campaign.php"
+    private val URLUpdateCampaign :String = "http://10.0.2.2/mamasan/update_campaign.php"
+    private val URLDeleteCampaign :String = "http://10.0.2.2/mamasan/delete_campaign.php"
+    private val URLBookCampaign :String = "http://10.0.2.2/mamasan/book_campaign.php"
 
     fun campaignCreate(context: Context, campaign: Campaign){
 
