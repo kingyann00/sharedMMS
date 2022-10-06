@@ -38,17 +38,31 @@ class Fragment_Campaign_Location_Create : Fragment() {
 
 
         binding.submitButton.setOnClickListener{
-            val campaign_state = binding.campaignStateEditText.text.toString()
-            val campaign_address = binding.campaignAddressEditText.text.toString()
+            if(binding.campaignStateEditText.text.isBlank() || binding.campaignAddressEditText.text.isBlank()){
 
-            val campaign = Campaign(0,campaign_title, campaign_description, max_booking,  campaign_date, campaign_time_start, campaign_time_end,
-                campaign_state, campaign_address)
-            DB_Campaign().campaignCreate(requireContext(), campaign)
+                //campaign state
+                if(binding.campaignStateEditText.text.isBlank()){
+                    binding.campaignStateEditText.error = "This field is required"
+                }
 
-            Toast.makeText(requireContext(), "Successfully Created", Toast.LENGTH_SHORT).show()
-            val action = Fragment_Campaign_Location_CreateDirections.actionFragmentCampaignLocationCreateToFragmentCampaignList()
-            findNavController().navigate(action)
+                //campaign address
+                if(binding.campaignAddressEditText.text.isBlank()){
+                    binding.campaignAddressEditText.error = "This field is required"
+                }
+            }else{
+                val campaign_state = binding.campaignStateEditText.text.toString()
+                val campaign_address = binding.campaignAddressEditText.text.toString()
+
+                val campaign = Campaign(0,campaign_title, campaign_description, max_booking,  campaign_date, campaign_time_start, campaign_time_end,
+                    campaign_state, campaign_address)
+                DB_Campaign().campaignCreate(requireContext(), campaign)
+
+                Toast.makeText(requireContext(), "Successfully Created", Toast.LENGTH_SHORT).show()
+                val action = Fragment_Campaign_Location_CreateDirections.actionFragmentCampaignLocationCreateToFragmentCampaignList()
+                findNavController().navigate(action)
+            }
         }
+
 
         return binding.root
     }

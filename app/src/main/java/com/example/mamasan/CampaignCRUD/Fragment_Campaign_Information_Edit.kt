@@ -1,6 +1,7 @@
 package com.example.mamasan_campaign.CampaignCRUD
 
 import android.app.TimePickerDialog
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CalendarView
 import android.widget.TimePicker
+import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.android.volley.AuthFailureError
@@ -16,10 +18,11 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.mamasan.R
 import com.example.mamasan.databinding.FragmentCampaignInformationEditBinding
 import org.json.JSONObject
 import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class Fragment_Campaign_Information_Edit : Fragment() {
@@ -29,8 +32,9 @@ class Fragment_Campaign_Information_Edit : Fragment() {
     private val args: Fragment_Campaign_DetailArgs by navArgs()
 
     private lateinit var campaignList: ArrayList<Campaign>
-    private val URLCampaignDetail:String = "http://10.0.2.2/mamasan/campaign_detail.php"
+    private val URLCampaignDetail:String = "http://10.0.2.2:8080/mamasan/campaign_detail.php"
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -67,27 +71,90 @@ class Fragment_Campaign_Information_Edit : Fragment() {
         }
 
         binding.calendarView.setOnDateChangeListener(
-            CalendarView.OnDateChangeListener { view, year, month, dayOfMonth ->
-                val Date = (dayOfMonth.toString() + "-"
-                        + (month + 1) + "-" + year)
-                binding.campaignEditDate.setText(Date)
+            CalendarView.OnDateChangeListener { _, year, month, dayOfMonth ->
+                var day: String = ""
+                var formatMonth: String = ""
+                var adjustMonth = month + 1
+
+                day = if (dayOfMonth < 10) {
+                    "0$dayOfMonth"
+                } else {
+                    "$dayOfMonth"
+                }
+
+                formatMonth = if (adjustMonth < 10) {
+                    "0$adjustMonth"
+                }else {
+                    "$adjustMonth"
+                }
+
+                val date = ("$year-$formatMonth-$day")
+
+                binding.campaignEditDate.text = date
             })
 
         binding.continueEditLocationButton.setOnClickListener{
+            //check blank
+            if ((binding.campaignEditTitleEditText.text.isBlank() || binding.campaignEditDescriptionEditText.text.isBlank()
+                        || binding.campaignEditMaxPeopleEditText.text.isBlank()
+                        || binding.campaignEditTimeStartButton.text.isBlank() || binding.campaignEditTimeEndButton.text.isBlank())
+                || binding.campaignEditDate.text.isBlank()
+            ) {
+                //campaign title
+                if (binding.campaignEditTitleEditText.text.isBlank()) {
+                    binding.campaignEditTitleEditText.error = "This field is required"
+                }
 
-            val campaign_title = binding.campaignEditTitleEditText.text.toString()
-            val max_booking = binding.campaignEditMaxPeopleEditText.text.toString().toInt()
-            val campaign_description = binding.campaignEditDescriptionEditText.text.toString()
-            val campaign_date = binding.campaignEditDate.text.toString()
-            val campaign_time_start = binding.campaignEditTimeStartButton.text.toString()
-            val campaign_time_end = binding.campaignEditTimeEndButton.text.toString()
-            val campaign_locationState = binding.campaignEditLocationState.text.toString()
-            val campaign_locationAddress = binding.campaignEditLocationAddress.text.toString()
+                //max people
+                if (binding.campaignEditMaxPeopleEditText.text.isBlank()) {
+                    binding.campaignEditMaxPeopleEditText.error = "This field is required"
+                }
 
-            val campaign = Campaign(campaign_id, campaign_title, campaign_description, max_booking, campaign_date, campaign_time_start, campaign_time_end,
-                campaign_locationState, campaign_locationAddress)
-            val action = Fragment_Campaign_Information_EditDirections.actionFragmentCampaignInformationEditToFragmentCampaignLocationEdit(campaign)
-            findNavController().navigate(action)
+                //description
+                if (binding.campaignEditDescriptionEditText.text.isBlank()) {
+                    binding.campaignEditDescriptionEditText.error = "This field is required"
+                }
+
+                //time start button
+                if (binding.campaignEditTimeStartButton.text.isBlank()) {
+                    binding.campaignEditTimeStartButton.error = "This field is required"
+                }
+
+                //time end button
+                if (binding.campaignEditTimeEndButton.text.isBlank()) {
+                    binding.campaignEditTimeEndButton.error = "This field is required"
+                }
+
+                //calendar
+                if (binding.campaignEditDate.text.isBlank()) {
+                    binding.campaignEditDate.error = "Pick a date!!!"
+                }
+                //check valid input
+            }else if(binding.campaignEditMaxPeopleEditText.text.toString().toInt() < 1 || !compareDateValidation()){
+
+                if (binding.campaignEditMaxPeopleEditText.text.toString().toInt() < 1) {
+                    binding.campaignEditMaxPeopleEditText.error = "Less than 1 is invalid"
+                }
+
+                if(!compareDateValidation()){
+                    binding.campaignEditDate.error = "Date must be after today!!!"
+                }
+                //Approved
+            }else{
+                val campaign_title = binding.campaignEditTitleEditText.text.toString()
+                val max_booking = binding.campaignEditMaxPeopleEditText.text.toString().toInt()
+                val campaign_description = binding.campaignEditDescriptionEditText.text.toString()
+                val campaign_date = binding.campaignEditDate.text.toString()
+                val campaign_time_start = binding.campaignEditTimeStartButton.text.toString()
+                val campaign_time_end = binding.campaignEditTimeEndButton.text.toString()
+                val campaign_locationState = binding.campaignEditLocationState.text.toString()
+                val campaign_locationAddress = binding.campaignEditLocationAddress.text.toString()
+
+                val campaign = Campaign(campaign_id, campaign_title, campaign_description, max_booking, campaign_date, campaign_time_start, campaign_time_end,
+                    campaign_locationState, campaign_locationAddress)
+                val action = Fragment_Campaign_Information_EditDirections.actionFragmentCampaignInformationEditToFragmentCampaignLocationEdit(campaign)
+                findNavController().navigate(action)
+            }
         }
         return binding.root
     }
@@ -95,7 +162,8 @@ class Fragment_Campaign_Information_Edit : Fragment() {
     fun searchCampaign(campaignID: String){
         campaignList = ArrayList()
 
-        val stringRequest: StringRequest = object : StringRequest(
+        val stringRequest: StringRequest = @RequiresApi(Build.VERSION_CODES.O)
+        object : StringRequest(
             Request.Method.POST, URLCampaignDetail,
             Response.Listener { response ->
                 Log.d("res", response)
@@ -121,13 +189,18 @@ class Fragment_Campaign_Information_Edit : Fragment() {
                         ))
 
                     if(jsonArray.length() - 1 == i){
-                        Log.i("Campaign Detail", "${campaignList[0].campaign_title} Selected!!!")
+//                        Log.i("Campaign Detail", "${campaignList[0].campaign_title} Selected!!!")
                         binding.campaignEditTitleEditText.setText(campaignList[0].campaign_title)
                         binding.campaignEditMaxPeopleEditText.setText(campaignList[0].max_booking.toString())
                         binding.campaignEditDescriptionEditText.setText(campaignList[0].campaign_description)
                         binding.campaignEditTimeStartButton.text = campaignList[0].campaign_time_start
                         binding.campaignEditTimeEndButton.text = campaignList[0].campaign_time_end
-                        binding.campaignEditDate.text = campaignList[0].campaign_date
+
+                        //format to the date format
+                        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+                        val campaignDate: LocalDate = LocalDate.parse(campaignList[0].campaign_date.toString(), formatter)
+                        binding.campaignEditDate.text = campaignDate.toString()
+
                         binding.campaignEditLocationState.text = campaignList[0].campaign_state
                         binding.campaignEditLocationAddress.text = campaignList[0].campaign_address
                     }
@@ -146,4 +219,27 @@ class Fragment_Campaign_Information_Edit : Fragment() {
         requestQueue.add(stringRequest)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun compareDateValidation(): Boolean {
+        var validatedDate: Boolean = false
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+        val currentDate: LocalDate = LocalDate.now()
+
+        val currentDateFormat: LocalDate = LocalDate.parse(currentDate.toString(), formatter)
+        val campaignDate: LocalDate =
+            LocalDate.parse(binding.campaignEditDate.text.toString(), formatter)
+
+        when{
+            currentDateFormat.isAfter(campaignDate) -> {
+                Log.i("invalid", "$currentDateFormat is after $campaignDate")
+                validatedDate = false
+            }
+            currentDateFormat.isBefore(campaignDate) -> {
+                Log.i("valid", "$currentDateFormat is before $campaignDate")
+                validatedDate = true
+            }
+        }
+
+        return validatedDate
+    }
 }

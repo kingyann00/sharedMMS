@@ -21,12 +21,15 @@
         <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/activity_boonhin.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/admin_campaign_list.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/campaign_donee_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/donee_campaign_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/donor_campaign_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment__campaign__detail.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment__campaign__information__edit.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment__campaign__list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment__campaign__location__create.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment__campaign__location__edit.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment__donee__list.xml" value="0.16" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment__donor__campaign__list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment__donor_campaign__detail.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment_campaign_information_create.xml" value="0.25416666666666665" />

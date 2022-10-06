@@ -45,14 +45,27 @@ class Fragment_Campaign_Location_Edit : Fragment() {
 
 
         binding.updateButton.setOnClickListener{
-            val campaign = Campaign(campaign_id.toString().toInt(),campaign_title, campaign_description, max_booking,  campaign_date, campaign_time_start, campaign_time_end,
-                campaign_state, campaign_address)
+            if(binding.campaignEditStateEditText.text.isBlank() || binding.campaignEditAddressEditText.text.isBlank()){
+                //campaign state
+                if(binding.campaignEditStateEditText.text.isBlank()){
+                    binding.campaignEditStateEditText.error = "This field is required"
+                }
 
-            Log.i("Location To DB", campaign.toString())
-            Toast.makeText(requireContext(), "Successfully Updated", Toast.LENGTH_SHORT).show()
-            DB_Campaign().updateCampaign(requireContext(), campaign)
-            val action = Fragment_Campaign_Location_EditDirections.actionFragmentCampaignLocationEditToFragmentCampaignList()
-            findNavController().navigate(action)
+                //campaign address
+                if(binding.campaignEditAddressEditText.text.isBlank()){
+                    binding.campaignEditAddressEditText.error = "This field is required"
+                }
+            }else{
+                val campaign = Campaign(campaign_id.toString().toInt(),campaign_title, campaign_description, max_booking,  campaign_date, campaign_time_start, campaign_time_end,
+                    binding.campaignEditStateEditText.text.toString(), binding.campaignEditAddressEditText.text.toString())
+
+                Log.i("Location To DB", campaign.toString())
+                Toast.makeText(requireContext(), "Successfully Updated", Toast.LENGTH_SHORT).show()
+                DB_Campaign().updateCampaign(requireContext(), campaign)
+                val action = Fragment_Campaign_Location_EditDirections.actionFragmentCampaignLocationEditToFragmentCampaignList()
+                findNavController().navigate(action)
+            }
+
         }
         return root
     }

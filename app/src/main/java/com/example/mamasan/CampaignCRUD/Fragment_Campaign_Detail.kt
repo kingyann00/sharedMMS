@@ -26,7 +26,7 @@ class Fragment_Campaign_Detail : Fragment() {
     private lateinit var binding: FragmentCampaignDetailBinding
     private val args: Fragment_Campaign_DetailArgs by navArgs()
 
-    private val URLCampaignDetail:String = "http://10.0.2.2/mamasan/campaign_detail.php"
+    private val URLCampaignDetail:String = "http://10.0.2.2:8080/mamasan/campaign_detail.php"
     private lateinit var campaignList: ArrayList<Campaign>
 
     override fun onCreateView(
@@ -47,6 +47,12 @@ class Fragment_Campaign_Detail : Fragment() {
         binding.campaignEditButton.setOnClickListener{
             val campaignID = binding.campaignDetailId.text.toString().toInt()
             val action = Fragment_Campaign_DetailDirections.actionFragmentCampaignDetailToFragmentCampaignInformationEdit(campaignID)
+            findNavController().navigate(action)
+        }
+
+        binding.checkCampaignDoneeButton.setOnClickListener{
+            val campaignID = binding.campaignDetailId.text.toString().toInt()
+            val action = Fragment_Campaign_DetailDirections.actionFragmentCampaignDetailToFragmentDoneeList(campaignID)
             findNavController().navigate(action)
         }
 

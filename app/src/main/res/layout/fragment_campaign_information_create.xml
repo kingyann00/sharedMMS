@@ -122,6 +122,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/tiny_spacing"
                             android:ems="10"
+                            android:text="0"
                             android:hint="Max People"
                             android:inputType="number"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -166,20 +167,24 @@
 
                         <Button
                             android:id="@+id/campaignTimeStart_Button"
-                            android:layout_width="150dp"
+                            android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/color_2"
-                            android:text="Time Start"
+                            android:hint="TIME START"
+                            android:textColorHint="@color/white"
+                            android:textSize="15dp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/campaign_time_start" />
 
                         <Button
                             android:id="@+id/campaignTimeEnd_Button"
-                            android:layout_width="150dp"
+                            android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/color_2"
-                            android:text="Time End"
+                            android:hint="TIME END"
+                            android:textColorHint="@color/white"
+                            android:textSize="15dp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/campaignTimeStart_Button" />
@@ -212,8 +217,9 @@
                             android:background="@drawable/replenishment_view_box"
                             android:gravity="center"
                             android:padding="@dimen/basic_margin"
-                            android:text="01-01-2022"
+                            android:hint="Pick A Date"
                             android:textSize="@dimen/title_h3"
+                            style="@android:style/Widget.EditText"
                             app:layout_constraintTop_toBottomOf="@+id/campaign_date_startend" />
 
                         <Button

@@ -1,4 +1,4 @@
-package com.example.mamasan_campaign.DonorCampaign
+package com.example.mamasan_campaign.DoneeCampaign
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -6,17 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mamasan_campaign.CampaignCRUD.CampaignAdapter
 import com.example.mamasan_campaign.CampaignCRUD.DonorCampaignList
 import com.example.mamasan.R
 
-class DonorCampaignAdapter(
+class DoneeCampaignAdapter(
     private val donorCampaignList: ArrayList<DonorCampaignList>,
-    private var listener: DonorCampaignAdapter.OnItemClickListener
-): RecyclerView.Adapter<DonorCampaignAdapter.DonorCampaignViewHolder>(){
+    private var listener: DoneeCampaignAdapter.OnItemClickListener
+): RecyclerView.Adapter<DoneeCampaignAdapter.DonorCampaignViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DonorCampaignViewHolder {
-        val donorCampaignView: View = LayoutInflater.from(parent.context).inflate(R.layout.donor_campaign_list,parent, false)
+        val donorCampaignView: View = LayoutInflater.from(parent.context).inflate(R.layout.donee_campaign_list,parent, false)
         return  DonorCampaignViewHolder(donorCampaignView)
     }
 

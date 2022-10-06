@@ -1,4 +1,4 @@
-package com.example.mamasan_campaign.DonorCampaign
+package com.example.mamasan_campaign.DoneeCampaign
 
 import android.os.Bundle
 import android.util.Log
@@ -17,13 +17,13 @@ import com.example.mamasan_campaign.CampaignCRUD.DonorCampaignList
 import com.example.mamasan.databinding.FragmentDonorCampaignListBinding
 import org.json.JSONObject
 
-class Fragment_Donor_Campaign_List : Fragment(),DonorCampaignAdapter.OnItemClickListener {
+class Fragment_Donee_Campaign_List : Fragment(),DoneeCampaignAdapter.OnItemClickListener {
 
     private lateinit var fragmentBinding: FragmentDonorCampaignListBinding
     private val binding get() = fragmentBinding
 
     private lateinit var donorCampaignList: ArrayList<DonorCampaignList>
-    private lateinit var donorCampaignAdapter: DonorCampaignAdapter
+    private lateinit var donorCampaignAdapter: DoneeCampaignAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,7 +37,7 @@ class Fragment_Donor_Campaign_List : Fragment(),DonorCampaignAdapter.OnItemClick
     }
 
     fun retrieveDoneeCampaign() {
-        val URLRetrieveCampaign: String = "http://10.0.2.2/mamasan/retrieve_campaign.php"
+        val URLRetrieveCampaign: String = "http://10.0.2.2:8080/mamasan/retrieve_campaign.php"
         donorCampaignList = ArrayList()
 
         val stringRequest: StringRequest = object : StringRequest(
@@ -63,7 +63,7 @@ class Fragment_Donor_Campaign_List : Fragment(),DonorCampaignAdapter.OnItemClick
                         )
                     )
                     if (jsonArray.length() - 1 == i) {
-                        donorCampaignAdapter = DonorCampaignAdapter(donorCampaignList, this)
+                        donorCampaignAdapter = DoneeCampaignAdapter(donorCampaignList, this)
                         binding.donorCampaignList.adapter = donorCampaignAdapter
                         binding.donorCampaignList.layoutManager = LinearLayoutManager(activity)
                         binding.donorCampaignList.setHasFixedSize(true)
@@ -87,8 +87,8 @@ class Fragment_Donor_Campaign_List : Fragment(),DonorCampaignAdapter.OnItemClick
     override fun onItemClick(position: Int) {
         val donorCampaignTitle = donorCampaignList[position].campaign_title
         val campaignID = donorCampaignList[position].campaign_id.toString().toInt()
-        Log.i("DCL Chosen", "donor campaign id: ${campaignID.toString()} on click")
-        val action = Fragment_Donor_Campaign_ListDirections.actionFragmentDonorCampaignListToFragmentDonorCampaignDetail(campaignID)
+        Log.i("DCL Chosen", "campaign id: ${campaignID.toString()} on click")
+        val action = Fragment_Donee_Campaign_ListDirections.actionFragmentDoneeCampaignListToFragmentDoneeCampaignDetail(campaignID)
         findNavController().navigate(action)
     }
 }

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/campaign_donee_list_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/basic_margin"
+                android:fontFamily="@font/roboto_black"
+                android:text="Donee Participating List"
+                android:textColor="@color/color_2"
+                android:textSize="@dimen/title_h2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/searchDonee_EditText"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="@dimen/basic_margin"
+                android:layout_marginEnd="@dimen/basic_margin"
+                android:background="@drawable/edittest_shadow"
+                android:elevation="10dp"
+                android:ems="10"
+                android:hint="Search Donee"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/tiny_spacing"
+                android:paddingEnd="@dimen/tiny_spacing"
+                android:textSize="@dimen/small_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintTop_toBottomOf="@+id/campaign_donee_list_label" />
+
+            <Spinner
+                android:id="@+id/spinner_FilterDonee"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="@dimen/basic_margin"
+                android:background="@drawable/edittest_shadow"
+                android:elevation="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/searchDonee_EditText"
+                app:layout_constraintEnd_toStartOf="@+id/searchDonee_EditText"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/searchDonee_EditText"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/campaign_donee_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_spacing_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinner_FilterDonee">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/emptyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Empty Purpose"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/campaign_donee_list" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

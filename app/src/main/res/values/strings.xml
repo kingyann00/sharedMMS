@@ -32,7 +32,11 @@
     <string name="signup_txt_welcome1">Welcome to MAMASAN</string>
     <string name="signup_txt_welcome2">Sign up as donor now!</string>
     <string name="campaign_detail">Blablabla</string>
-
+    <string-array name="donorstatus">
+        <item>Pending</item>
+        <item>Rejected</item>
+        <item>Approved</item>
+    </string-array>
     <string-array name="booking_time">
         <item>9:00 AM</item>
         <item>10:00 AM</item>

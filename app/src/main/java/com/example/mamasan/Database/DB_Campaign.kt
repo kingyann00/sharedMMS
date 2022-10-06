@@ -14,10 +14,14 @@ import org.json.JSONObject
 
 class DB_Campaign(){
 
-    private val URLCreateCampaign :String = "http://10.0.2.2/mamasan/create_campaign.php"
-    private val URLUpdateCampaign :String = "http://10.0.2.2/mamasan/update_campaign.php"
-    private val URLDeleteCampaign :String = "http://10.0.2.2/mamasan/delete_campaign.php"
-    private val URLBookCampaign :String = "http://10.0.2.2/mamasan/book_campaign.php"
+    //admin
+    private val URLCreateCampaign :String = "http://10.0.2.2:8080/mamasan/create_campaign.php"
+    private val URLUpdateCampaign :String = "http://10.0.2.2:8080/mamasan/update_campaign.php"
+    private val URLDeleteCampaign :String = "http://10.0.2.2:8080/mamasan/delete_campaign.php"
+    private val URLReviewDonee :String = "http://10.0.2.2:8080/mamasan/review_donee.php"
+    //donee
+    private val URLBookCampaign :String = "http://10.0.2.2:8080/mamasan/book_campaign.php"
+    private val URLCancelBookCampaign :String = "http://10.0.2.2:8080/mamasan/cancel_book_campaign.php"
 
     fun campaignCreate(context: Context, campaign: Campaign){
 
@@ -129,6 +133,59 @@ class DB_Campaign(){
                 val data: MutableMap<String, String> = HashMap()
                 data["campaign_id"] = campaignID!!
                 data["donee_id"] = doneeID!!
+                return data
+            }
+        }
+        val requestQueue = Volley.newRequestQueue(context)
+        requestQueue.add(stringRequest)
+    }
+
+    fun cancelCampaign(context: Context, campaignID: String, doneeID: String){
+        val stringRequest: StringRequest = object : StringRequest(
+            Request.Method.POST, URLCancelBookCampaign,
+            Response.Listener { response ->
+                Log.d("res", response)
+                if (response == "success") {
+                    Log.i("Success","Campaign Booking Successfully Canceled")
+                } else if (response == "failure") {
+                    Log.e("Fail","Campaign Failed to Canceled")
+                }
+            },
+            Response.ErrorListener { error ->
+                Log.e("Error Response", error.toString().trim { it <= ' ' })
+            }) {
+            @Throws(AuthFailureError::class)
+            override fun getParams(): Map<String, String>? {
+                val data: MutableMap<String, String> = HashMap()
+                data["campaign_id"] = campaignID!!
+                data["donee_id"] = doneeID!!
+                return data
+            }
+        }
+        val requestQueue = Volley.newRequestQueue(context)
+        requestQueue.add(stringRequest)
+    }
+
+    fun approveOrReject(context: Context, doneeID: String, campaignID:String, review: String){
+        val stringRequest: StringRequest = object : StringRequest(
+            Request.Method.POST, URLReviewDonee,
+            Response.Listener { response ->
+                Log.d("res", response)
+                if (response == "success") {
+                    Log.i("Success","Success to update review")
+                } else if (response == "failure") {
+                    Log.e("Fail","Failed to update review")
+                }
+            },
+            Response.ErrorListener { error ->
+                Log.e("Error Response", error.toString().trim { it <= ' ' })
+            }) {
+            @Throws(AuthFailureError::class)
+            override fun getParams(): Map<String, String>? {
+                val data: MutableMap<String, String> = HashMap()
+                data["donee_id"] = doneeID!!
+                data["campaign_id"] = campaignID!!
+                data["review"] = review!!
                 return data
             }
         }

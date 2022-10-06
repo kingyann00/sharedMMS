@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:layout_marginEnd="@dimen/basic_margin"
+        android:layout_marginBottom="@dimen/basic_margin"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/spacing_margin"
+            android:paddingEnd="@dimen/spacing_margin">
+
+            <TextView
+                android:id="@+id/donee_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/basic_margin"
+                android:fontFamily="@font/roboto_black"
+                android:text="Donee Info"
+                android:textColor="@color/color_2"
+                android:textSize="@dimen/title_h3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/horizantal_line"
+                android:layout_width="match_parent"
+                android:layout_height="2sp"
+                android:background="@color/color_horizantal_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/donee_info" />
+
+            <ImageView
+                android:id="@+id/donee_name_icon"
+                android:layout_width="@dimen/tiny_description"
+                android:layout_height="@dimen/tiny_description"
+                app:layout_constraintBottom_toBottomOf="@+id/donee_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/donee_name"
+                app:srcCompat="@drawable/ic_baseline_person_24" />
+
+            <TextView
+                android:id="@+id/donee_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_margin"
+                android:text="Ng Boon Hin"
+                android:textColor="@color/default_background"
+                android:textSize="@dimen/small_description"
+                app:layout_constraintBottom_toTopOf="@+id/donee_phone"
+                app:layout_constraintStart_toEndOf="@+id/donee_name_icon"
+                app:layout_constraintTop_toBottomOf="@+id/horizantal_line" />
+
+            <ImageView
+                android:id="@+id/donee_email_icon"
+                android:layout_width="@dimen/tiny_description"
+                android:layout_height="@dimen/tiny_description"
+                app:layout_constraintBottom_toBottomOf="@+id/donee_email"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/donee_name_icon"
+                app:layout_constraintTop_toTopOf="@+id/donee_email"
+                app:srcCompat="@drawable/ic_baseline_email_24" />
+
+            <TextView
+                android:id="@+id/donee_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_margin"
+                android:layout_marginBottom="@dimen/spacing_margin"
+                android:text="ngbh-wm19@student.tarc.edu.my"
+                android:textColor="@color/default_background"
+                android:textSize="@dimen/small_description"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/donee_email_icon"
+                app:layout_constraintTop_toBottomOf="@+id/donee_name" />
+
+            <ImageView
+                android:id="@+id/donee_status_icon"
+                android:layout_width="@dimen/tiny_description"
+                android:layout_height="@dimen/tiny_description"
+                android:layout_marginTop="@dimen/spacing_margin"
+                android:layout_marginEnd="@dimen/spacing_margin"
+                app:layout_constraintBottom_toTopOf="@+id/donee_phone"
+                app:layout_constraintEnd_toStartOf="@+id/donee_status"
+                app:layout_constraintTop_toBottomOf="@+id/donee_info"
+                app:srcCompat="@drawable/ic_baseline_folder_shared_24" />
+
+            <TextView
+                android:id="@+id/donee_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Excellent"
+                android:textColor="@color/default_background"
+                android:textSize="@dimen/small_description"
+                android:layout_marginTop="@dimen/spacing_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/horizantal_line" />
+
+            <ImageView
+                android:id="@+id/donee_phone_icon"
+                android:layout_width="@dimen/tiny_description"
+                android:layout_height="@dimen/tiny_description"
+                android:layout_marginTop="@dimen/basic_margin"
+                android:layout_marginEnd="@dimen/spacing_margin"
+                app:layout_constraintEnd_toStartOf="@+id/donee_phone"
+                app:layout_constraintTop_toBottomOf="@+id/donee_status_icon"
+                app:srcCompat="@drawable/ic_baseline_phone_24" />
+
+            <TextView
+                android:id="@+id/donee_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_margin"
+                android:layout_marginBottom="@dimen/basic_margin"
+                android:text="012-6243178"
+                android:textColor="@color/default_background"
+                android:textSize="@dimen/small_description"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/donee_status" />
+
+            <TextView
+                android:id="@+id/donee_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

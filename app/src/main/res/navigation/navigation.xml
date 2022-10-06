@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/fragment_Donor_Campaign_List">
+    app:startDestination="@id/fragment_Campaign_List">
 
     <fragment
         android:id="@+id/fragment_Campaign_List"
@@ -57,6 +57,9 @@
             android:id="@+id/action_fragment_Campaign_Detail_to_fragment_Campaign_List2"
             app:destination="@id/fragment_Campaign_List"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_fragment_Campaign_Detail_to_fragment_Donee_List"
+            app:destination="@id/fragment_Donee_List" />
     </fragment>
 
     <fragment
@@ -86,28 +89,38 @@
     </fragment>
 
     <fragment
-        android:id="@+id/fragment_Donor_Campaign_List"
-        android:name="com.example.mamasan_campaign.DonorCampaign.Fragment_Donor_Campaign_List"
+        android:id="@+id/fragment_Donee_Campaign_List"
+        android:name="com.example.mamasan_campaign.DoneeCampaign.Fragment_Donee_Campaign_List"
         android:label="Fragment_Donor_Campaign_List"
         tools:layout="@layout/fragment__donor__campaign__list">
         <action
-            android:id="@+id/action_fragment_Donor_Campaign_List_to_fragment_DonorCampaign_Detail"
-            app:destination="@id/fragment_DonorCampaign_Detail"
+            android:id="@+id/action_fragment_Donee_Campaign_List_to_fragment_DoneeCampaign_Detail"
+            app:destination="@id/fragment_DoneeCampaign_Detail"
             app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
-        android:id="@+id/fragment_DonorCampaign_Detail"
-        android:name="com.example.mamasan_campaign.DonorCampaign.Fragment_DonorCampaign_Detail"
+        android:id="@+id/fragment_DoneeCampaign_Detail"
+        android:name="com.example.mamasan_campaign.DoneeCampaign.Fragment_DoneeCampaign_Detail"
         android:label="Fragment_DonorCampaign_Detail"
         tools:layout="@layout/fragment__donor_campaign__detail">
         <argument
             android:name="campaignID"
             app:argType="integer" />
         <action
-            android:id="@+id/action_fragment_DonorCampaign_Detail_to_fragment_Donor_Campaign_List"
-            app:destination="@id/fragment_Donor_Campaign_List"
+            android:id="@+id/action_fragment_DoneeCampaign_Detail_to_fragment_Donee_Campaign_List"
+            app:destination="@id/fragment_Donee_Campaign_List"
             app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_Donee_List"
+        android:name="com.example.mamasan_campaign.CampaignDonee.Fragment_Donee_List"
+        android:label="fragment__donee__list"
+        tools:layout="@layout/fragment__donee__list" >
+        <argument
+            android:name="campaignID"
+            app:argType="integer" />
     </fragment>
 
 

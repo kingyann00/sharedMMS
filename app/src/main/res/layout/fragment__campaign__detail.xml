@@ -176,13 +176,13 @@
 
 
             <Button
-                android:id="@+id/campaignShare_Button"
+                android:id="@+id/checkCampaignDonee_Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_spacing_margin"
                 android:fontFamily="@font/roboto_black"
                 android:padding="@dimen/spacing_margin"
-                android:text="SHARE COMUNNITY"
+                android:text="CHECK DONEE"
                 android:textSize="@dimen/title_size"
                 app:backgroundTint="@color/color_approve"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -201,7 +201,7 @@
                 app:backgroundTint="@color/color_2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/campaignShare_Button" />
+                app:layout_constraintTop_toBottomOf="@+id/checkCampaignDonee_Button" />
 
             <Button
                 android:id="@+id/campaignDelete_Button"

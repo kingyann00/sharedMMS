@@ -1,4 +1,4 @@
-package com.example.mamasan_campaign.DonorCampaign
+package com.example.mamasan_campaign.DoneeCampaign
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -14,23 +14,22 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.mamasan_campaign.CampaignCRUD.Campaign
 import com.example.mamasan_campaign.CampaignCRUD.DonorCampaign
-import com.example.mamasan_campaign.CampaignCRUD.DonorCampaignList
-import com.example.mamasan_campaign.CampaignCRUD.Fragment_Campaign_DetailDirections
 import com.example.mamasan_campaign.Database.DB_Campaign
 import com.example.mamasan.R
-import com.example.mamasan.databinding.FragmentCampaignDetailBinding
 import com.example.mamasan.databinding.FragmentDonorCampaignDetailBinding
 import org.json.JSONObject
 
-class Fragment_DonorCampaign_Detail : Fragment() {
-    private lateinit var binding: FragmentDonorCampaignDetailBinding
-    private val args: Fragment_DonorCampaign_DetailArgs by navArgs()
+class Fragment_DoneeCampaign_Detail : Fragment() {
+    private val URLCheckBookingStatus: String = "http://10.0.2.2:8080/mamasan/check_book_status.php"
+    private val URLDonorCampaignDetail: String = "http://10.0.2.2:8080/mamasan/retrieve_donee_campaign.php"
 
-    private val URLCheckBookingStatus: String = "http://10.0.2.2/mamasan/check_book_status.php"
-    private val URLDonorCampaignDetail: String = "http://10.0.2.2/mamasan/retrieve_donee_campaign.php"
+    private lateinit var binding: FragmentDonorCampaignDetailBinding
+    private val args: Fragment_DoneeCampaign_DetailArgs by navArgs()
+
+    private var doneeID = "1"
     private lateinit var donorCampaignList: ArrayList<DonorCampaign>
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,17 +37,31 @@ class Fragment_DonorCampaign_Detail : Fragment() {
     ): View? {
         binding = FragmentDonorCampaignDetailBinding.inflate(inflater, container, false)
 
-        //hardcoded for doneeIDs
-        val doneeID = "2"
         val campaignID = args.campaignID.toString()
-        checkBookStatus(doneeID, campaignID)
         searchCampaign(campaignID)
-
         binding.bookCampaignButton.setOnClickListener {
-
+            //cancel booking
             if (binding.bookCampaignButton.text == "Cancel Booking"){
                 Log.i("CancelBookingPres", "Cancel Booking is pressed")
-            }else{
+                val builder = AlertDialog.Builder(activity)
+                builder.setMessage("Are you sure you want to cancel ${binding.campaignDonordetailTitle.text} ?")
+                builder.setTitle("Cancel Campaign !")
+                builder.setCancelable(false)
+
+                builder.setPositiveButton("Yes") {
+                        dialog, which ->
+                    DB_Campaign().cancelCampaign(requireContext(), campaignID.toString(), doneeID)
+                    val action = Fragment_DoneeCampaign_DetailDirections.actionFragmentDoneeCampaignDetailToFragmentDoneeCampaignList()
+                    findNavController().navigate(action)
+                }
+                builder.setNegativeButton("No") {
+                        dialog, which ->
+                    dialog.cancel()
+                }
+                val alertDialog = builder.create()
+                alertDialog.show()
+            //booking
+            }else if(binding.bookCampaignButton.text == "Book Campaign"){
                 val builder = AlertDialog.Builder(activity)
                 builder.setMessage("Are you sure you want to book ${binding.campaignDonordetailTitle.text} ?")
                 builder.setTitle("Booking A Campaign !")
@@ -56,11 +69,8 @@ class Fragment_DonorCampaign_Detail : Fragment() {
 
                 builder.setPositiveButton("Book") {
                         dialog, which ->
-                    DB_Campaign().bookCampaign(requireContext(), campaignID.toString(), "3")
-                    //change button color
-                    binding.bookCampaignButton.setText("Cancel Booking")
-                    binding.bookCampaignButton.setBackgroundColor(binding.bookCampaignButton.context.resources.getColor(R.color.color_reject))
-                    val action = Fragment_DonorCampaign_DetailDirections.actionFragmentDonorCampaignDetailToFragmentDonorCampaignList()
+                    DB_Campaign().bookCampaign(requireContext(), campaignID.toString(), doneeID)
+                    val action = Fragment_DoneeCampaign_DetailDirections.actionFragmentDoneeCampaignDetailToFragmentDoneeCampaignList()
                     findNavController().navigate(action)
                 }
                 builder.setNegativeButton("Cancel") {
@@ -70,9 +80,7 @@ class Fragment_DonorCampaign_Detail : Fragment() {
                 val alertDialog = builder.create()
                 alertDialog.show()
             }
-
         }
-
         return binding.root
     }
 
@@ -90,12 +98,12 @@ class Fragment_DonorCampaign_Detail : Fragment() {
                 for (i in 0 until jsonArray?.length()!!) {
                     val jsonObject = jsonArray?.optJSONObject(i)
                     if (jsonArray.length() - 1 == i) {
-                        Log.i(
-                            "Campaign Booked!!!",
-                            "Campaign Already Booked"
-                        )
+                        Log.i("Campaign Booked!!!", "Campaign Already Booked")
                         binding.bookCampaignButton.setText("Cancel Booking")
                         binding.bookCampaignButton.setBackgroundColor(binding.bookCampaignButton.context.resources.getColor(R.color.color_reject))
+                    }else{
+                        binding.bookCampaignButton.setText("Book Campaign")
+                        binding.bookCampaignButton.setBackgroundColor(binding.bookCampaignButton.context.resources.getColor(R.color.color_approve))
                     }
                 }
             }, Response.ErrorListener { error ->
@@ -115,7 +123,6 @@ class Fragment_DonorCampaign_Detail : Fragment() {
 
     fun searchCampaign(campaignID: String) {
         donorCampaignList = ArrayList()
-
         val stringRequest: StringRequest = object : StringRequest(
             Request.Method.POST, URLDonorCampaignDetail,
             Response.Listener { response ->
@@ -142,27 +149,19 @@ class Fragment_DonorCampaign_Detail : Fragment() {
                             jsonObject?.getString("campaign_address")
                         )
                     )
-
                     if (jsonArray.length() - 1 == i) {
-                        Log.i(
-                            "Campaign Detail",
-                            "${donorCampaignList[0].campaign_title} Selected!!!"
-                        )
-
+                        Log.i("Campaign Detail", "${donorCampaignList[0].campaign_title} Selected!!!")
                         binding.campaignDonordetailTitle.text = donorCampaignList[0].campaign_title
                         binding.campaignDonordetailDate.text = donorCampaignList[0].campaign_date
-                        binding.campaignDonordetailLocation.text =
-                            donorCampaignList[0].campaign_state + ", " + donorCampaignList[0].campaign_address
-                        binding.campaignDonordetailTimeStartEnd.text =
-                            donorCampaignList[0].campaign_time_start + " - " + donorCampaignList[0].campaign_time_end
+                        binding.campaignDonordetailLocation.text = donorCampaignList[0].campaign_state + ", " + donorCampaignList[0].campaign_address
+                        binding.campaignDonordetailTimeStartEnd.text = donorCampaignList[0].campaign_time_start + " - " + donorCampaignList[0].campaign_time_end
                         //max people - participant count() = people left to participate
                         val peopleLeft = donorCampaignList[0].max_booking.toString()
                             .toInt() - donorCampaignList[0].participant.toString().toInt()
                         binding.campaignDonordetailPeopleLeft.text = peopleLeft.toString()
-                        binding.campaignDonordetailDescription.text =
-                            donorCampaignList[0].campaign_description
-                        binding.campaignDonortdetailId.text =
-                            donorCampaignList[0].campaign_id.toString()
+                        binding.campaignDonordetailDescription.text = donorCampaignList[0].campaign_description
+                        binding.campaignDonortdetailId.text = donorCampaignList[0].campaign_id.toString()
+                        checkBookStatus(doneeID, campaignID)
                     }
                 }
             }, Response.ErrorListener { error ->
