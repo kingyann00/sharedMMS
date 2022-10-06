@@ -25,14 +25,15 @@ import org.json.JSONObject
 
 class BookingDonationRecord : Fragment() {
 
-    private val URL:String = "http://10.0.2.2:88/mamasan/view_booking_donation.php"
-    private val bookingDateStatusURL:String = "http://10.0.2.2:88/mamasan/view_bookinglist_date.php"
-    private val dateURL:String = "http://10.0.2.2:88/mamasan/view_booking_date.php"
+    private val URL:String = "http://10.0.2.2/mamasan/view_booking_donation.php"
+    private val bookingDateStatusURL:String = "http://10.0.2.2/mamasan/view_bookinglist_date.php"
+    private val dateURL:String = "http://10.0.2.2/mamasan/view_booking_date.php"
     var arrayList = ArrayList<DonationBooking>()
     var arlSpinnerDate: MutableList<String?> = ArrayList()
     private lateinit var bookingAdapter: BookingAdapter
     private var date:String? = null
     private var status:String? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

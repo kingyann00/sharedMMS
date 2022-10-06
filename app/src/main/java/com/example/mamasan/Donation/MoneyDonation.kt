@@ -21,7 +21,7 @@ class MoneyDonation : Fragment() {
 
     lateinit var binding: FragmentMoneyDonationBinding
     private var amount: String? = null
-    private val URL :String = "http://10.0.2.2:88/mamasan/insert_money_donation.php"
+    private val URL :String = "http://10.0.2.2/mamasan/insert_money_donation.php"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

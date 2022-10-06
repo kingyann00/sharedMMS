@@ -22,9 +22,9 @@ import com.example.mamasan.databinding.FragmentFoodDonationBinding
 import org.json.JSONObject
 
 class FoodDonation : Fragment() {
-    private val URL:String = "http://10.0.2.2:88/mamasan/read_food_list.php"
-    private val cancelURL:String = "http://10.0.2.2:88/mamasan/cancel_donation.php"
-    private val completeURL:String = "http://10.0.2.2:88/mamasan/food_donation_done.php"
+    private val URL:String = "http://10.0.2.2/mamasan/read_food_list.php"
+    private val cancelURL:String = "http://10.0.2.2/mamasan/cancel_donation.php"
+    private val completeURL:String = "http://10.0.2.2/mamasan/food_donation_done.php"
     var arrayList = ArrayList<FoodList>()
     private lateinit var foodAdapter: FoodListAdapter
     override fun onCreateView(

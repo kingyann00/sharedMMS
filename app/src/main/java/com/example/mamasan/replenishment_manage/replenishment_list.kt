@@ -11,6 +11,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.mamasan.MainActivity
 import com.example.mamasan.R
 import com.example.mamasan.databinding.ActivityReplenishmentListBinding
 import com.example.mamasan.replenishment_manage.ui.main.SectionsPagerAdapter
@@ -33,7 +34,7 @@ class replenishment_list : AppCompatActivity() {
         tabs.setupWithViewPager(viewPager)
         binding.header.headerText.text = "Replenishment: List"
         binding.header.backIcon.setOnClickListener{
-            val intent = Intent(this,navigation_replenishment_search::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
         binding.addBar.setOnClickListener{

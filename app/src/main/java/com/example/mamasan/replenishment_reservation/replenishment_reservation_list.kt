@@ -9,7 +9,9 @@ import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.example.mamasan.MainActivity
 import com.example.mamasan.databinding.ActivityReplenishmentReservationListBinding
+import com.example.mamasan.replenishment_manage.replenishment_list
 import com.example.mamasan.replenishment_reservation.ui.main.SectionsPagerAdapter
 
 class replenishment_reservation_list : AppCompatActivity() {
@@ -24,6 +26,11 @@ class replenishment_reservation_list : AppCompatActivity() {
         binding.header.headerText.text = "Replenishment: Reservation"
         binding.searchBar.setOnClickListener{
             val intent = Intent(this,navigation_replenishment_reservation::class.java)
+            startActivity(intent)
+        }
+
+        binding.header.backIcon.setOnClickListener{
+            val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
         val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)

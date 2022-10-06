@@ -22,7 +22,7 @@ import kotlin.collections.HashMap
 
 class DonateSuccess : Fragment() {
 
-    private val URL :String = "http://10.0.2.2:88/mamasan/read_money_donation.php"
+    private val URL :String = "http://10.0.2.2/mamasan/read_money_donation.php"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {

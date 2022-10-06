@@ -33,7 +33,7 @@ class SignUpActivity : AppCompatActivity() {
     private var status: Int? = null
 
     lateinit var i: Intent
-    private val URL: String = "http://10.0.2.2/mamasandb/signup.php"
+    private val URL: String = "http://10.0.2.2/mamasan/signup.php"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -19,14 +19,14 @@ import com.android.volley.toolbox.Volley
 import com.example.mamasan.R
 import com.example.mamasan.databinding.FragmentBookingDonationRecordBinding
 import com.example.mamasan.databinding.FragmentDonationFoodDetailBinding
-import kotlinx.android.synthetic.main.fragment_donation_food_detail.*
+
 import org.json.JSONObject
 
 class DonationFoodDetail : Fragment() {
 
-    private val URL:String = "http://10.0.2.2:88/mamasan/view_donation_fooddetail.php"
-    private val receivedURL:String = "http://10.0.2.2:88/mamasan/complete_booking_status.php"
-    private val cancelURL:String = "http://10.0.2.2:88/mamasan/cancel_booking_status.php"
+    private val URL:String = "http://10.0.2.2/mamasan/view_donation_fooddetail.php"
+    private val receivedURL:String = "http://10.0.2.2/mamasan/complete_booking_status.php"
+    private val cancelURL:String = "http://10.0.2.2/mamasan/cancel_booking_status.php"
     var arrayList = ArrayList<FoodList>()
     private lateinit var foodAdapter: FoodListAdapter
     private var foodID:String? = null
@@ -84,7 +84,7 @@ class DonationFoodDetail : Fragment() {
                         jsonObject?.getString("skuQuantity"),
                         jsonObject?.getString("quantity"),
                         jsonObject?.getString("foodType_id"),
-                        jsonObject?.getString("description"),
+                        jsonObject?.getString("foodType"),
                         jsonObject?.getString("SKU_id"),
                         jsonObject?.getString("symbol")))
 

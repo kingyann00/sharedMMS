@@ -27,9 +27,9 @@ import kotlinx.android.synthetic.main.fragment_money_donation_record.*
 import org.json.JSONObject
 
 class MoneyDonationRecord : Fragment() {
-    private val URL:String = "http://10.0.2.2:88/mamasan/view_money_donation.php"
-    private val mdonationDateURL:String = "http://10.0.2.2:88/mamasan/view_moneylist_date.php"
-    private val dateURL:String = "http://10.0.2.2:88/mamasan/view_money_date.php"
+    private val URL:String = "http://10.0.2.2/mamasan/view_money_donation.php"
+    private val mdonationDateURL:String = "http://10.0.2.2/mamasan/view_moneylist_date.php"
+    private val dateURL:String = "http://10.0.2.2/mamasan/view_money_date.php"
     var arrayList = ArrayList<MDonationRecord>()
     var arlSpinnerDate: MutableList<String?> = ArrayList()
     private lateinit var mdonationAdapter: MDoantionAdapter

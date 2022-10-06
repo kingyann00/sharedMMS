@@ -21,7 +21,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
     var arrayList = ArrayList<Users>()
     var fullName: String = "Hon King Yann"
-    private val URL: String = "http://10.0.2.2/mamasandb/get_users_details.php"
+    private val URL: String = "http://10.0.2.2/mamasan/get_users_details.php"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_profile)
@@ -31,6 +31,11 @@ class ProfileActivity : AppCompatActivity() {
             if (fullName != null) {
                 binding.tvName.text = fullName
             }
+        }
+        binding.btnProfileDetails.setOnClickListener{
+            val intent = Intent(this, ProfileDetailsActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
     }

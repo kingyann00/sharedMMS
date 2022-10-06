@@ -22,7 +22,7 @@ class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
     lateinit var etEmail: EditText
     lateinit var etPassword: EditText
-    private val URL: String = "http://10.0.2.2/mamasandb/signin.php"
+    private val URL: String = "http://10.0.2.2/mamasan/signin.php"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_in)

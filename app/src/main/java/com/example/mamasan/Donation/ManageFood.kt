@@ -21,11 +21,11 @@ import org.json.JSONObject
 
 
 class ManageFood : Fragment() {
-    private val URLSppinerFoodType :String = "http://10.0.2.2:88/mamasan/read_food_type.php"
-    private val URLSppinerSkus: String = "http://10.0.2.2:88/mamasan/read_skus.php"
-    private val URLAddFood: String = "http://10.0.2.2:88/mamasan/add_food.php"
-    private val URLEditFood: String = "http://10.0.2.2:88/mamasan/edit_food.php"
-    private val URLDeleteFood: String = "http://10.0.2.2:88/mamasan/delete_food.php"
+    private val URLSppinerFoodType :String = "http://10.0.2.2/mamasan/read_food_type.php"
+    private val URLSppinerSkus: String = "http://10.0.2.2/mamasan/read_skus.php"
+    private val URLAddFood: String = "http://10.0.2.2/mamasan/add_food.php"
+    private val URLEditFood: String = "http://10.0.2.2/mamasan/edit_food.php"
+    private val URLDeleteFood: String = "http://10.0.2.2/mamasan/delete_food.php"
     private var arlSpinnerFoodType: MutableList<String?> = ArrayList()
     private var arlSpinnerSkus: MutableList<String?> = ArrayList()
     private var foodID:String? = null

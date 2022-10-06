@@ -27,8 +27,8 @@ import java.time.format.DateTimeFormatter
 
 class BookingDonation : Fragment() {
 
-    private val URLSppiner :String = "http://10.0.2.2:88/mamasan/read_branch.php"
-    private val URLInsertBooking :String = "http://10.0.2.2:88/mamasan/insert_booking_donation.php"
+    private val URLSppiner :String = "http://10.0.2.2/mamasan/read_branch.php"
+    private val URLInsertBooking :String = "http://10.0.2.2/mamasan/insert_booking_donation.php"
     private var arlSpinner: MutableList<String?> = ArrayList()
     private var date:String? = null
     private var time:String? = null
