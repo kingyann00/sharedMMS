@@ -30,7 +30,10 @@
     <string name="main_txt_create_donor_account">Create Donor Account</string>
     <string name="main_txt_sign_in">Sign In</string>
     <string name="signup_txt_welcome1">Welcome to MAMASAN</string>
-    <string name="signup_txt_welcome2">Sign up as donor now!</string>
+    <string name="donor_txt_welcome2">Fill up details to sign up as donor now!</string>
+    <string name="donee_txt_welcome2">Fill up details to sign up as donee now!</string>
+    <string name="donee_txt_welcome3">You will get verify by our staff soon</string>
+    <string name="main_create_account">Create Account</string>
     <string name="campaign_detail">Blablabla</string>
     <string-array name="donorstatus">
         <item>Pending</item>

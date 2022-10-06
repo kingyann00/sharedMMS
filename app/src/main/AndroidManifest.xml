@@ -58,11 +58,30 @@
         <activity
             android:name=".SignInActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MamasanMain" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".ProfileDetailsDoneeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileDonorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateDoneeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AccountTypeSelectionActivity"
+            android:exported="false" />
+             <activity
+            android:name=".ProfileDetailsDonorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileDoneeActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".CreateDonorActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MamasanMain" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -33,4 +33,10 @@
         <item name="android:layout_height">42dp</item>
         <item name="android:buttonTint">@color/mamasan_green</item>
     </style>
+
+    <style name="asterisk">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+    </style>
 </resources>

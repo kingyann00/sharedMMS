@@ -16,27 +16,20 @@
         <entry key="..\:/Users/KingYann/AndroidStudioProjects/Mamasan/app/src/main/res/layout/item_replenishment_donation.xml" value="0.5" />
         <entry key="..\:/Users/KingYann/AndroidStudioProjects/Mamasan/app/src/main/res/layout/items_replenishment.xml" value="0.5" />
         <entry key="..\:/Users/KingYann/AndroidStudioProjects/Mamasan/app/src/main/res/layout/items_replenishment_reservation.xml" value="0.35833333333333334" />
-        <entry key="..\:/Users/KingYann/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/activity_profile.xml" value="0.25" />
-        <entry key="..\:/Users/KingYann/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/activity_profile_details.xml" value="0.41702867072111205" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/activity_boonhin.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/admin_campaign_list.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/campaign_donee_list.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/donee_campaign_list.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/donor_campaign_list.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment__campaign__detail.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment__campaign__information__edit.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment__campaign__list.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment__campaign__location__create.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment__campaign__location__edit.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment__donee__list.xml" value="0.16" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment__donor__campaign__list.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment__donor_campaign__detail.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment_campaign_information_create.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/zhen-/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/activity_create_donor.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/zhen-/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/activity_donation.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/zhen-/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/zhen-/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/activity_mamasan_main.xml" value="0.3625" />
+        <entry key="..\:/Users/zhen-/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/activity_navigation_replenishment_reservation.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/zhen-/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/activity_profile.xml" value="0.1762917933130699" />
-        <entry key="..\:/Users/zhen-/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/activity_profile_details.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/zhen-/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/activity_profile_details.xml" value="0.33" />
+        <entry key="..\:/Users/zhen-/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/activity_sign_up.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/zhen-/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment_booking_donation.xml" value="0.3572916666666667" />
+        <entry key="..\:/Users/zhen-/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment_booking_donation_record.xml" value="0.3572916666666667" />
+        <entry key="..\:/Users/zhen-/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment_donate_success.xml" value="0.3572916666666667" />
+        <entry key="..\:/Users/zhen-/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment_donation_food_detail.xml" value="0.3572916666666667" />
+        <entry key="..\:/Users/zhen-/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment_manage_food.xml" value="0.3572916666666667" />
+        <entry key="..\:/Users/zhen-/AndroidStudioProjects/sharedMMS/app/src/main/res/layout/fragment_replenishment_information_create.xml" value="0.3572916666666667" />
       </map>
     </option>
   </component>

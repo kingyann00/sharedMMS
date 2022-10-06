@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <androidx.constraintlayout.widget.ConstraintLayout
+
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      tools:context=".ProfileDoneeActivity">
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="140dp"
+        android:text="Jack Low"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgProfilePic"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="[your email here]"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toEndOf="@+id/imgProfilePic"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <ImageView
+        android:id="@+id/imgProfilePic"
+        android:layout_width="108dp"
+        android:layout_height="97dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.172"
+        app:srcCompat="@drawable/stonk" />
+
+    <Button
+        android:id="@+id/btnProfileDetails"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="52dp"
+        android:text="My Profile Details"
+        android:textAlignment="center"
+        app:icon="@drawable/user"
+        app:iconSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgProfilePic" />
+
+    <Button
+        android:id="@+id/btnStatus"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:text="My Status: [your status here]"
+        app:icon="@drawable/icons8_star_100"
+        app:iconSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnProfileDetails" />
+
+    <Button
+        android:id="@+id/btnBookedCampaign"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:text="My Booked Campaign"
+        app:icon="@drawable/schedule"
+        app:iconSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStatus" />
+
+    <Button
+        android:id="@+id/btnSignOut"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:text="Sign Out"
+        app:icon="@drawable/logout_icon_151219"
+        app:iconSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBookedCampaign"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!--  <FrameLayout-->
+    <!--      android:id="@+id/frameLayout"-->
+    <!--      android:layout_width="match_parent"-->
+    <!--      android:layout_height="400dp"-->
+    <!--      app:layout_constraintEnd_toEndOf="parent"-->
+    <!--      app:layout_constraintStart_toStartOf="parent"-->
+    <!--      app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--  <Button-->
+    <!--      android:id="@+id/btnFrag2"-->
+    <!--      android:layout_width="wrap_content"-->
+    <!--      android:layout_height="wrap_content"-->
+    <!--      android:layout_marginTop="104dp"-->
+    <!--      android:text="fragment 2"-->
+    <!--      app:layout_constraintEnd_toEndOf="parent"-->
+    <!--      app:layout_constraintTop_toBottomOf="@+id/frameLayout" />-->
+
+    <!--  <Button-->
+    <!--      android:id="@+id/btnFrag1"-->
+    <!--      android:layout_width="wrap_content"-->
+    <!--      android:layout_height="wrap_content"-->
+    <!--      android:layout_marginTop="104dp"-->
+    <!--      android:text="fragment 1"-->
+    <!--      app:layout_constraintStart_toStartOf="parent"-->
+    <!--      app:layout_constraintTop_toBottomOf="@+id/frameLayout" />-->
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
